@@ -91,8 +91,6 @@ export default function Contact() {
         </div>
       </div>
 
-      {/* Spacer to prevent footer overlap */}
-      <div className="h-12 shrink-0"></div>
     </div>
   );
 }
