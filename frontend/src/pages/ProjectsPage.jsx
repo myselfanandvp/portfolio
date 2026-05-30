@@ -7,15 +7,15 @@ import Olx from "../assets/Olx.png"
 import Wavelift from "../assets/Wavelift.png"
 import Website from "../assets/OfficalWebsite.png"
 function ProjectsPage() {
+
   const items = [
     {
       image: Wavelift,
-      title: "WaveLift Audio E-Commerce Platform",
-      subtitle: "A premium, full-stack headphone buying marketplace featuring dynamic filtering and a seamless checkout experience.",
+      title: "WaveLift Legal Claims Platform",
+      subtitle: "Full-stack enterprise legal & insurance workflow system built with Django",
       handle: "@wavelift",
-      // Vibrant Neon Fuchsia to Amethyst Violet
-      borderColor: "#ec4899",
-      gradient: "linear-gradient(135deg, #ec4899 0%, #8b5cf6 100%)",
+      borderColor: "#e176c8",
+      gradient: "linear-gradient(145deg, #e176c8, #792CA2)",
       url: "https://www.wavelift.dpdns.org/",
     },
     {
@@ -23,9 +23,8 @@ function ProjectsPage() {
       title: "Manjaro Landing Page Clone",
       subtitle: "Fully responsive modern UI clone developed using HTML & Tailwind CSS",
       handle: "@manjaroclone",
-      // Deep Emerald Teal to Ocean Blue
-      borderColor: "#0ea5e9",
-      gradient: "linear-gradient(135deg, #059669 0%, #0ea5e9 100%)",
+      borderColor: "#5798b4",
+      gradient: "linear-gradient(210deg, #5798b4, #4d585f)",
       url: "https://myselfanandvp.github.io/Manjaro_org_clone/",
     },
     {
@@ -33,9 +32,8 @@ function ProjectsPage() {
       title: "Brilworx Corporate Website",
       subtitle: "Responsive business website crafted using HTML and Tailwind CSS",
       handle: "@brilworx",
-      // Sunset Coral to Radiant Amber
-      borderColor: "#f43f5e",
-      gradient: "linear-gradient(135deg, #f43f5e 0%, #f59e0b 100%)",
+      borderColor: "#fde17d",
+      gradient: "linear-gradient(165deg, #fde17d, #70d2c1)",
       url: "https://myselfanandvp.github.io/-Brilworx/",
     },
     {
@@ -43,9 +41,8 @@ function ProjectsPage() {
       title: "Netflix UI Clone",
       subtitle: "Interactive streaming platform clone powered by React.js and Firebase",
       handle: "@netflixclone",
-      // Crimson Ruby Red to Deep Wine
-      borderColor: "#ef4444",
-      gradient: "linear-gradient(135deg, #dc2626 0%, #4c0519 100%)",
+      borderColor: "#3b2b2e",
+      gradient: "linear-gradient(145deg, #3b2b2e, #e13d46)",
       url: "https://github.com/myselfanandvp/Netflix-clone",
     },
     {
@@ -53,26 +50,25 @@ function ProjectsPage() {
       title: "OLX Marketplace Clone",
       subtitle: "Responsive marketplace application using React.js and Firebase backend",
       handle: "@olxclone",
-      // Electric Cyan to Royal Indigo Blue
-      borderColor: "#3b82f6",
-      gradient: "linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%)",
+      borderColor: "#6791f0",
+      gradient: "linear-gradient(145deg, #6791f0, #cb5e83)",
       url: "https://github.com/myselfanandvp/olx-clone",
     },
     {
       image: Website,
       title: "My Official Website",
-      subtitle: "Personal portfolio website hosted on GitHub Pages, showcasing my projects, skills, tech stack, and contact information with a clean responsive design.",
+      subtitle:
+        "Personal portfolio website hosted on GitHub Pages, showcasing my projects, skills, tech stack, and contact information with a clean responsive design.",
       handle: "@OfficialWebsite",
-      // Neon Purple to Deep Cosmic Indigo
-      borderColor: "#a855f7",
-      gradient: "linear-gradient(135deg, #a855f7 0%, #312e81 100%)",
+      borderColor: "#9252ff",
+      gradient: "linear-gradient(145deg, #9252ff,#050505)",
       url: "https://myselfanandvp.github.io/officialwebsite/",
     },
   ];
   return (
     <PageTransition>
       {/* Main Page Layout Wrapper */}
-      <section className="relative z-10 flex flex-col items-center min-h-[calc(100vh-80px)] px-4 sm:px-6 py-16 md:py-24 max-w-8xl mx-auto w-full overflow-hidden">
+      <section className="relative z-10 flex flex-col items-center min-h-[calc(100vh-80px)] px-4 sm:px-6 py-16 md:py-24 max-w-6xl mx-auto w-full overflow-hidden">
 
         {/* Header content grouped to preserve vertical flow */}
         <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 md:mb-16">

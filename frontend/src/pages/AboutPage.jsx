@@ -7,7 +7,7 @@ function AboutPage() {
     <PageTransition>
 
       {/* Main Content Container */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-8xl mx-auto">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-5xl mx-auto">
 
         {/* Cute Animated Badge */}
         <div className="mb-6 animate-bounce [animation-duration:3s]">
@@ -27,7 +27,7 @@ function AboutPage() {
           {/* Left Side: Bio Narrative */}
           <div className="md:col-span-3 space-y-6 text-slate-600 dark:text-slate-300 font-medium text-base md:text-lg leading-relaxed">
             <p>
-              I'm <span className="text-slate-900 dark:text-white font-bold">Anand VP</span>, a Full Stack Developer with over 2 years of experience building enterprise-grade legal administration platforms, scalable RESTful APIs, and automated data pipelines. I focus on delivering clean, maintainable software that solves real business puzzles and increases overall application reliability.
+              I'm <span className="text-teal-500 font-bold">Anand VP</span>, a Full Stack Developer with over 2 years of experience building enterprise-grade legal administration platforms, scalable RESTful APIs, and automated data pipelines. I focus on delivering clean, maintainable software that solves real business puzzles and increases overall application reliability.
             </p>
             <p>
               During my time as a Software Engineer at Standout IT Solutions, I engineered core relational database schemas from scratch to support complex workflows like claim processing and insurance settlements. By rewriting legacy queries with optimized CTEs, Cross Apply, and indexed Stored Procedures, I successfully reduced multi-table report generation times by 40%.
