@@ -1,149 +1,164 @@
 import PageTransition from "../components/PageTransition";
 import BorderGlow from "../components/animations/GlowingBorder";
 import { Link } from "react-router-dom";
-
+import { useSelector } from "react-redux";
 function AboutPage() {
+  const darkMode = useSelector(state => state.theme.darkMode)
   return (
     <PageTransition>
+      {/* Structural Main Layout - Corrected to pt-16 for navbar offset alignment and top-start alignment */}
+      <section className="relative z-10 flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 pt-16 pb-12 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
 
-      {/* Main Content Container */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-5xl mx-auto">
-
-        {/* Cute Animated Badge */}
-        <div className="mb-6 animate-bounce [animation-duration:3s]">
-          <span className="inline-flex items-center gap-1.5 bg-pink-50 dark:bg-pink-950/50 border border-pink-200 dark:border-pink-900 text-pink-600 dark:text-pink-400 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide shadow-sm">
-            ✨ Nice to meet you!
+        {/* Minimal Context Indicator */}
+        <div className="mb-2 mt-5 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse"></span>
+          <span className="text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+            Professional Profile
           </span>
         </div>
 
-        {/* Beautiful Gradient Title */}
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 dark:from-pink-400 dark:via-purple-400 dark:to-indigo-400 drop-shadow-sm pb-2 text-center">
+        {/* Crisp Architectural Heading */}
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center">
           About Me
         </h1>
+        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-2 mb-8"></div>
 
-        {/* Intro Grid: Text + Card */}
-        <div className="mt-12 grid md:grid-cols-5 gap-8 items-start w-full">
+        {/* High-Density Dashboard Grid */}
+        <div className="w-full space-y-6 z-20">
 
-          {/* Left Side: Bio Narrative */}
-          <div className="md:col-span-3 space-y-6 text-slate-600 dark:text-slate-300 font-medium text-base md:text-lg leading-relaxed">
-            <p>
-              I'm <span className="text-teal-500 font-bold">Anand VP</span>, a Full Stack Developer with over 2 years of experience building enterprise-grade legal administration platforms, scalable RESTful APIs, and automated data pipelines. I focus on delivering clean, maintainable software that solves real business puzzles and increases overall application reliability.
-            </p>
-            <p>
-              During my time as a Software Engineer at Standout IT Solutions, I engineered core relational database schemas from scratch to support complex workflows like claim processing and insurance settlements. By rewriting legacy queries with optimized CTEs, Cross Apply, and indexed Stored Procedures, I successfully reduced multi-table report generation times by 40%.
-            </p>
-            <p>
-              I enjoy bridging operational gaps with code—whether that means implementing modular Django REST Framework endpoints with JWT authentication or designing configurable ETL pipelines with Pandas that cut data-load failure rates by over 90%. I am actively looking for product-focused engineering opportunities where robust code architectures and measurable real-world performance matter.
-            </p>
+          {/* Top Row: Split Bio and Technical Snapshot */}
+          <div className="grid lg:grid-cols-12 gap-5 lg:gap-6 items-stretch w-full">
 
-            {/* Selected Highlights */}
-            <div className="mt-4">
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-200 mb-2 uppercase tracking-wide">Selected highlights</h4>
-              <ul className="list-disc pl-5 space-y-2 text-sm text-slate-600 dark:text-slate-300">
-                <li>Engineered secure role-based multi-client legal administration tools handling multi-role access controls.</li>
-                <li>Optimized query execution overhead, decreasing report processing time down to seconds using parameterized SQL views.</li>
-                <li>Designed autonomous ETL data data-loading layers to parse bulk client CSV and Excel datasets with error-logging layers.</li>
-                <li>Wrote clean API documentation and rigorous Postman test scripts, improving developer onboarding speed.</li>
-              </ul>
+            {/* Deep Professional Bio */}
+            <div className="lg:col-span-7 flex flex-col justify-between p-5 md:p-6 bg-zinc-50/50 dark:bg-zinc-900/30 rounded-xl border border-zinc-200/60 dark:border-zinc-800/60 space-y-4 text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed backdrop-blur-md">
+              <p>
+                I am <span className="text-zinc-900 dark:text-zinc-100 font-semibold border-b border-amber-500/40">Anand V P</span>, a Full Stack Developer specialized in creating resilient backend architectures, production-grade API systems, and automated data processing modules. My engineering philosophy centers on code legibility, structural performance, and building systems that directly eliminate operational overhead.
+              </p>
+              <p>
+                During my tenure at Standout IT Solutions, I architected relational database schemas from the ground up to power multi-role legal administration workflows and claims processing. By implementing optimized Common Table Expressions (CTEs) and strategic database index layers, I reduced data-heavy reporting generation times by 40%.
+              </p>
+              <p className="hidden md:block">
+                Whether deploying modular Django REST Framework architectures secured with cryptographic JWT flows or structuring idempotent ETL data-load layers using Pandas, I design software with edge-case protection in mind.
+              </p>
             </div>
 
-            {/* Academic Foundations */}
-            <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800">
-              <h4 className="text-sm font-bold text-slate-900 dark:text-slate-200 mb-2 uppercase tracking-wide">Education & Foundations</h4>
-              <div className="space-y-3 text-sm">
+            {/* Technical Snapshot Card */}
+            <BorderGlow
+              glowIntensity={15}
+              glowRadius={30}
+              className="p-3 lg:col-span-5 flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-sm"
+              backgroundColor={darkMode ? "black" : "white"}
+            >
+              <div className="flex flex-col flex-1 w-full p-5 md:p-6 rounded-xl  bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
                 <div>
-                  <div className="font-bold text-slate-800 dark:text-slate-200">Full Stack Developer Program (React.js + Django)</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-xs">Brototype | In Progress</div>
+                  <h3 className="text-xs font-bold uppercase tracking-wider mb-4 text-zinc-900 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-900 pb-2 font-mono">
+                    Technical Blueprint
+                  </h3>
+
+                  <div className="grid grid-cols-1 gap-4 text-xs">
+                    <div className="space-y-1">
+                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                        01 // Service Stack
+                      </div>
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs">
+                        Python, Django, DRF, Node.js, FastAPIs, .NET Core, PHP
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                        02 // Client Layer
+                      </div>
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs">
+                        React.js, Redux Toolkit, JS (ES6+), Tailwind, Next.js UI
+                      </div>
+                    </div>
+
+                    <div className="space-y-1">
+                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                        03 // Infra & Storage
+                      </div>
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs line-clamp-2 lg:line-clamp-none">
+                        PostgreSQL, MS SQL, MySQL, MongoDB, Redis, Pandas, Git, Linux
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <div className="font-bold text-slate-800 dark:text-slate-200">Web Application Development</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-xs">Keltron Knowledge Centre | .NET Core & PHP Certification</div>
+
+                <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-900/60 flex items-center justify-between text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Modular
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Efficiency
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Pure Pipelines
+                  </span>
                 </div>
-                <div>
-                  <div className="font-bold text-slate-800 dark:text-slate-200">B.Sc. Physics</div>
-                  <div className="text-slate-500 dark:text-slate-400 text-xs">MG College, Mahatma Gandhi University</div>
+              </div>
+            </BorderGlow>
+          </div>
+
+          {/* Bottom Row: Core Deliverables & Evolution mapped side-by-side */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-5 lg:gap-6">
+
+            {/* Core Competency Deliverables */}
+            <div className="md:col-span-7 p-5 md:p-6 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 rounded-xl">
+              <h4 className="text-[10px] font-bold text-zinc-900 dark:text-zinc-300 mb-3 uppercase tracking-widest font-mono">
+                Core Competency Deliverables
+              </h4>
+              <div className="grid sm:grid-cols-2 gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 font-medium">▪</span>
+                  <span>Engineered secure multi-tenant access control architectures governing sensitive data pipelines.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 font-medium">▪</span>
+                  <span>Minimized heavy analytical calculation queries into microsecond loads using indexed configurations.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 font-medium">▪</span>
+                  <span>Designed robust validation and logging layers handling high-volume file ingestions smoothly.</span>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-amber-500 font-medium">▪</span>
+                  <span>Maintained deterministic Postman integrations to cut engineering onboarding intervals.</span>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Right Side: Technical Snapshot Card */}
-          <BorderGlow glowIntensity={50} glowRadius={50} className="p-2 md:col-span-2 hover:scale-[1.02] transition-transform duration-300">
-            <div className="p-6 rounded-xl md:p-8 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-300">
-              <h3 className="text-xl font-bold mb-4 text-indigo-600 dark:text-indigo-400">Technical Snapshot</h3>
-
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-base dark:bg-indigo-950">🐍</span>
-                  <div>
-                    <div className="font-semibold text-slate-900 dark:text-slate-100">Backend</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">Python, Django, DRF, Node.js, .NET Core, PHP</div>
-                  </div>
-                </li>
-
-                <li className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-base dark:bg-purple-950">⚛️</span>
-                  <div>
-                    <div className="font-semibold text-slate-900 dark:text-slate-100">Frontend</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">React.js, JavaScript (ES6+), Tailwind CSS, HTML5, CSS3, Bootstrap</div>
-                  </div>
-                </li>
-
-                <li className="flex items-start gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-pink-50 text-base dark:bg-pink-950">🗄️</span>
-                  <div>
-                    <div className="font-semibold text-slate-900 dark:text-slate-100">Databases & Tools</div>
-                    <div className="text-sm text-slate-600 dark:text-slate-400">MS SQL Server, PostgreSQL, MySQL, MongoDB, Pandas, Git, Linux</div>
-                  </div>
-                </li>
-              </ul>
-
-              <hr className="my-4 border-slate-200 dark:border-slate-800" />
-
-              <h4 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-2">My Fuel ☕</h4>
-              <ul className="space-y-2 text-sm font-medium text-slate-700 dark:text-slate-300">
-                <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-indigo-50 dark:bg-indigo-950">🎨</span>
-                  Clean, maintainable design systems
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-purple-50 dark:bg-purple-950">🚀</span>
-                  Performance & scalable architecture
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-pink-50 dark:bg-pink-950">🧩</span>
-                  Reliable data pipelines & reporting
-                </li>
-              </ul>
+            {/* Academic & Certification Foundations */}
+            <div className="md:col-span-5 p-5 md:p-6 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 rounded-xl flex flex-col justify-between">
+              <h4 className="text-[10px] font-bold text-zinc-900 dark:text-zinc-300 mb-3 uppercase tracking-widest font-mono">
+                Foundations & Evolution
+              </h4>
+              <div className="space-y-3 text-xs">
+                <div>
+                  <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">Full Stack Specialization (React + Django)</div>
+                  <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Brototype — Intensive Residency</div>
+                </div>
+                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5">
+                  <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">Web Application Architecture Studies</div>
+                  <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Keltron Centre — .NET & PHP Stack</div>
+                </div>
+                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5">
+                  <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">B.Sc. Physics</div>
+                  <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Mahatma Gandhi University</div>
+                </div>
+              </div>
             </div>
-          </BorderGlow>
+
+          </div>
         </div>
 
-        {/* Bottom CTA */}
-
+        {/* Action Footer Link */}
         <Link
           to="/"
-          className="mt-8 inline-flex items-center justify-center bg-slate-900 text-gray-100 dark:bg-white dark:text-slate-900 font-semibold px-8 py-3.5 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-all duration-300 md:mt-5"
+          className="mt-8 z-20 inline-flex items-center justify-center bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase px-5 py-2.5 rounded border border-zinc-900 dark:border-zinc-100 hover:bg-transparent dark:hover:bg-transparent hover:text-zinc-950 dark:hover:text-zinc-100 transition-all duration-300"
         >
-          Back to Home
+          Return to Hub
         </Link>
-
-        {/* Floating Emojis matching the Landing Page system */}
-        <div className="absolute top-24 right-8 md:right-16 text-4xl pointer-events-none animate-float opacity-70 dark:opacity-80">
-          🐍
-        </div>
-
-        <div className="absolute bottom-32 right-10 md:right-20 text-3xl pointer-events-none animate-float [animation-delay:1.5s] opacity-60 dark:opacity-70">
-          ☕
-        </div>
-
-        <div className="absolute top-32 left-10 md:left-20 text-4xl pointer-events-none animate-float [animation-delay:0.7s] opacity-70 dark:opacity-80">
-          ✨
-        </div>
-
-        <div className="absolute bottom-24 left-12 md:left-24 text-3xl pointer-events-none animate-float [animation-delay:2.2s] opacity-60 dark:opacity-70">
-          💡
-        </div>
       </section>
     </PageTransition >
   );

@@ -4,79 +4,79 @@ import PageTransition from "../components/PageTransition";
 function SkillsPage() {
   const skillCategories = [
     {
+      index: "01 // UI Architecture",
       title: "Frontend Development",
-      emoji: "⚛️",
-      colorClass: "from-blue-500 to-cyan-400",
       skills: ["React.js", "Redux Toolkit", "Tailwind CSS", "Vite", "JavaScript (ES6+)"]
     },
     {
+      index: "02 // Systems & Integration",
       title: "Backend & Data Engines",
-      emoji: "🐍",
-      colorClass: "from-emerald-500 to-indigo-500",
       skills: ["Python", "Django / DRF", "MS SQL Server", "PostgreSQL", "Pandas ETL"]
     },
     {
-      title: "Tools & Environment",
-      emoji: "💻",
-      colorClass: "from-purple-500 to-pink-500",
-      skills: ["Git & GitHub", "Linux Systems", "Postman APIs", "SSMS", "Node.js & .NET Core"]
+      index: "03 // Runtime & Environment",
+      title: "Tools & Workspace",
+      skills: ["Git & GitHub", "Linux Systems", "Postman APIs", "SSMS", "Node.js / .NET Core"]
     }
   ];
 
   return (
     <PageTransition>
-      {/* Centered Skills Section Wrapper */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-8xl mx-auto w-full">
+      {/* Structural Skills Section Wrapper */}
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
 
-        {/* Animated Badge */}
-        <div className="mb-6 animate-bounce [animation-duration:3s]">
-          <span className="inline-flex items-center gap-1.5 bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 dark:text-indigo-400 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide shadow-sm backdrop-blur-sm">
-            🛠️ My Toolkit
+        {/* Minimal Context Indicator */}
+        <div className="mb-4 flex items-center gap-2">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+          <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+            Technical Matrix
           </span>
         </div>
 
-        {/* Title */}
-        <h1 className="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-600 dark:from-blue-400 dark:via-indigo-400 dark:to-purple-400 drop-shadow-sm pb-2 text-center">
+        {/* Crisp Architectural Heading */}
+        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-2 text-center">
           Skills & Tech Stack
         </h1>
+        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-1 mb-6"></div>
 
-        <p className="mt-4 max-w-xl text-center text-slate-600 dark:text-slate-300 font-medium text-base md:text-lg mb-14">
-          The languages, frameworks, database architectures, and development environments I use daily to engineer clean, maintainable platforms.
+        <p className="max-w-md text-center text-zinc-500 dark:text-zinc-400 font-normal text-sm md:text-base mb-16 leading-relaxed">
+          Languages, core frameworks, storage architectures, and environments deployed to maintain runtime performance.
         </p>
 
-        {/* Centered Grid with transparent background cards */}
+        {/* Unified Geometry Grid */}
         <div className="grid md:grid-cols-3 gap-6 w-full justify-center items-stretch z-20">
           {skillCategories.map((category, idx) => (
             <BorderGlow
               key={idx}
-              glowIntensity={40}
-              className="flex flex-col h-full bg-transparent w-full"
+              glowIntensity={20}
+              className="flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-2xl"
               backgroundColor="bg-transparent"
             >
-              {/* Box background set to fully transparent with fine-tuned borders for contrast */}
-              <div className="flex flex-col flex-1 w-full bg-transparent border border-slate-200/60 dark:border-slate-800/60 p-6 rounded-3xl hover:-translate-y-1 transition-all duration-300">
+              {/* Structural Content Container Block */}
+              <div className="flex flex-col flex-1 w-full p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
 
-                {/* Category Header */}
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-slate-500/5 dark:bg-slate-400/5 flex items-center justify-center border border-slate-200/30 dark:border-slate-800/30">
-                    <span className="text-xl">{category.emoji}</span>
-                  </div>
-                  <h3 className="text-lg font-bold text-slate-800 dark:text-slate-100">
+                {/* Module Heading Group */}
+                <div className="flex flex-col gap-1 mb-6 pb-4 border-b border-zinc-100 dark:border-zinc-900">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+                    {category.index}
+                  </span>
+                  <h3 className="text-base font-bold text-zinc-900 dark:text-zinc-200">
                     {category.title}
                   </h3>
                 </div>
 
-                {/* Skills List with matching transparent items */}
-                <ul className="space-y-3 flex-1 flex flex-col justify-start">
+                {/* Clean, Uniform Row Elements */}
+                <ul className="space-y-2 flex-1 flex flex-col justify-start font-sans">
                   {category.skills.map((skill, sIdx) => (
                     <li
                       key={sIdx}
-                      className="group flex items-center justify-between p-3 rounded-2xl bg-slate-500/5 dark:bg-slate-400/5 border border-slate-200/20 dark:border-slate-800/20 transition-all duration-200 hover:bg-slate-500/10 dark:hover:bg-slate-400/10"
+                      className="group flex items-center justify-between p-3 rounded-lg bg-zinc-500/5 dark:bg-zinc-400/5 border border-zinc-200/30 dark:border-zinc-800/30 transition-all duration-200 hover:bg-zinc-500/10 dark:hover:bg-zinc-400/10"
                     >
-                      <span className="font-semibold text-sm text-slate-700 dark:text-slate-200 group-hover:translate-x-1 transition-transform">
+                      <span className="text-xs md:text-sm font-medium text-zinc-800 dark:text-zinc-300 transition-transform duration-150 group-hover:translate-x-0.5">
                         {skill}
                       </span>
-                      <span className={`w-2 h-2 rounded-full bg-gradient-to-r ${category.colorClass} opacity-60 group-hover:scale-150 transition-transform`} />
+                      {/* Architectural Status Dot Indicator */}
+                      <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 dark:bg-zinc-700 group-hover:bg-amber-500 dark:group-hover:bg-amber-400 transition-colors duration-150" />
                     </li>
                   ))}
                 </ul>
@@ -85,12 +85,6 @@ function SkillsPage() {
             </BorderGlow>
           ))}
         </div>
-
-        {/* Ambient Floating Icons */}
-        <div className="absolute top-24 left-8 md:left-16 text-4xl pointer-events-none animate-float opacity-70 dark:opacity-80">⚙️</div>
-        <div className="absolute bottom-32 left-10 md:left-20 text-3xl pointer-events-none animate-float [animation-delay:1.5s] opacity-60 dark:opacity-70">⚛️</div>
-        <div className="absolute top-32 right-10 md:right-20 text-4xl pointer-events-none animate-float [animation-delay:0.7s] opacity-70 dark:opacity-80">🐍</div>
-        <div className="absolute bottom-24 right-12 md:right-24 text-3xl pointer-events-none animate-float [animation-delay:2.2s] opacity-60 dark:opacity-70">🗄️</div>
       </section>
     </PageTransition>
   );

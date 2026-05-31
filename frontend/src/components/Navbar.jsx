@@ -19,42 +19,126 @@ function Navbar() {
   }, [darkMode]);
 
   const navLinks = [
-    { name: "home", href: "/" },
-    { name: "about", href: "/about" },
-    { name: "projects", href: "/projects" },
-    { name: "skills", href: "/skills" },
-    { name: "contact", href: "/contact" },
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Projects", href: "/projects" },
+    { name: "Skills", href: "/skills" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/80 bg-transparent font-mono transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <nav className="fixed top-0 left-0 z-50 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Logo / Coder System Init */}
+        {/* Brand / Professional Identity */}
         <div className="flex items-center gap-2">
           <Link
             to="/"
-            className="text-sm font-bold tracking-tight text-slate-800 dark:text-slate-200 hover:text-teal-500 dark:hover:text-teal-400 transition"
+            className="text-sm font-semibold tracking-wider text-zinc-900 dark:text-zinc-100 hover:opacity-80 transition flex items-center gap-2 font-mono uppercase"
           >
-            <span className="text-teal-500">anand_vp</span>
-            <span className="text-slate-400 dark:text-slate-600 font-normal">::</span>
-            <span className="text-slate-500 dark:text-slate-400">system</span>
+            <span className="w-2 h-2 rounded-full bg-amber-500"></span>
+            Anand V P
           </Link>
         </div>
 
-        {/* Desktop Links - File Path Style */}
-        <ul className="hidden md:flex items-center gap-1 text-xs font-bold text-slate-500 dark:text-slate-500">
+        {/* Desktop Links - Elegant Product Style */}
+        <ul className="hidden md:flex items-center gap-6 text-xs font-medium tracking-wide text-zinc-500 dark:text-zinc-400">
           {navLinks.map((link) => {
             const isActive = location.pathname === link.href;
 
             return (
-              <li key={link.name} className="flex items-center">
-                <span className="text-slate-300 dark:text-slate-800 select-none px-1">/</span>
+              <li key={link.name} className="relative py-1">
                 <Link
                   to={link.href}
-                  className={`px-2 py-1.5 rounded transition-all duration-150 ${isActive
-                      ? "text-teal-500 dark:text-teal-400 bg-slate-500/10"
-                      : "hover:text-slate-800 dark:hover:text-slate-200"
+                  className={`transition-colors duration-200 ${isActive
+                    ? "text-amber-600 dark:text-amber-400 font-semibold"
+                    : "hover:text-zinc-900 dark:hover:text-zinc-100"
+                    }`}
+                >
+                  {link.name}
+                </Link>
+                {/* Active Indicator Underline */}
+                {isActive && (
+                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-amber-500 rounded-full" />
+                )}
+              </li>
+            );
+          })}
+        </ul>
+
+        {/* Desktop Controls */}
+        <div className="hidden md:flex items-center gap-5">
+          {/* Minimalist Theme Toggle Slider Utility */}
+          <button
+            onClick={() => dispatch(toggleTheme())}
+            aria-label="Toggle Environment"
+            className="group relative p-2 rounded-md border border-zinc-200 dark:border-zinc-800/80 text-zinc-500 dark:text-zinc-400 hover:bg-zinc-100 dark:hover:bg-zinc-900/60 transition-all duration-150"
+          >
+            <div className="w-4 h-4 flex items-center justify-center">
+              {darkMode ? (
+                /* Light Mode Sun Icon Icon replacement */
+                <svg className="w-4 h-4 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m12.728 0l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                </svg>
+              ) : (
+                /* Dark Mode Moon Icon */
+                <svg className="w-4 h-4 text-zinc-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              )}
+            </div>
+          </button>
+
+          {/* Luxury Minimal CTA */}
+          <Link
+            to="/contact"
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded border border-zinc-900 bg-zinc-900 text-white dark:border-zinc-100 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wide hover:opacity-90 transition-all duration-200"
+          >
+            Let's Talk
+          </Link>
+        </div>
+
+        {/* Mobile Interface Controls */}
+        <div className="flex items-center gap-3 md:hidden">
+          {/* Mobile Icon Toggle */}
+          <button
+            onClick={() => dispatch(toggleTheme())}
+            aria-label="Toggle Theme"
+            className="p-2 rounded border border-zinc-200 dark:border-zinc-800/80 bg-zinc-100/50 dark:bg-zinc-900/50"
+          >
+            {darkMode ? (
+              <span className="text-xs text-amber-400">☀️</span>
+            ) : (
+              <span className="text-xs text-zinc-700">🌙</span>
+            )}
+          </button>
+
+          {/* Menu Toggle */}
+          <button
+            onClick={() => setOpen(!open)}
+            className="p-2 text-zinc-800 dark:text-zinc-200 font-medium text-xs tracking-wider"
+            aria-label="Toggle Menu"
+          >
+            {open ? "CLOSE" : "MENU"}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu Dropdown Overlay */}
+      <div
+        className={`md:hidden border-b border-zinc-200 dark:border-zinc-800 bg-white/95 dark:bg-zinc-950/95 backdrop-blur-md transition-all duration-300 ease-in-out ${open ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible overflow-hidden"
+          }`}
+      >
+        <ul className="px-6 py-6 space-y-4 text-sm font-medium text-zinc-600 dark:text-zinc-400">
+          {navLinks.map((link) => {
+            const isActive = location.pathname === link.href;
+
+            return (
+              <li key={link.name}>
+                <Link
+                  to={link.href}
+                  onClick={() => setOpen(false)}
+                  className={`block py-1 transition-colors ${isActive ? "text-amber-600 dark:text-amber-400 font-semibold" : "hover:text-zinc-900 dark:hover:text-zinc-100"
                     }`}
                 >
                   {link.name}
@@ -62,91 +146,14 @@ function Navbar() {
               </li>
             );
           })}
-        </ul>
 
-        {/* Desktop Terminal Utilities */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* Theme Toggle Module */}
-          <button
-            onClick={() => dispatch(toggleTheme())}
-            aria-label="Toggle Environment"
-            className="group relative p-2 rounded-md bg-slate-500/5 dark:bg-slate-400/5 border border-slate-200/40 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 hover:bg-slate-500/10 dark:hover:bg-slate-400/10 transition-all duration-150 active:scale-95"
-          >
-            <div className="relative w-4 h-4 flex items-center justify-center overflow-hidden text-[10px] font-bold">
-              {darkMode ? (
-                <span className="text-indigo-400">DARK</span>
-              ) : (
-                <span className="text-amber-600">LITE</span>
-              )}
-            </div>
-          </button>
-
-          {/* Code Execution CTA */}
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center px-4 py-1.5 rounded-md border border-slate-900 text-slate-900 dark:border-slate-100 dark:text-slate-100 font-bold text-xs hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-slate-900 transition-all duration-200"
-          >
-            ./connect
-          </Link>
-        </div>
-
-        {/* Mobile Shell Controls */}
-        <div className="flex items-center gap-2 md:hidden">
-          {/* Mobile Theme String Indicator */}
-          <button
-            onClick={() => dispatch(toggleTheme())}
-            aria-label="Toggle Theme"
-            className="px-2 py-1 rounded text-[10px] font-bold bg-slate-500/5 dark:bg-slate-400/5 border border-slate-200/40 dark:border-slate-800/60"
-          >
-            {darkMode ? (
-              <span className="text-indigo-400">DEV.dark</span>
-            ) : (
-              <span className="text-amber-600">DEV.lite</span>
-            )}
-          </button>
-
-          {/* Menu Toggle */}
-          <button
-            onClick={() => setOpen(!open)}
-            className="p-1.5 rounded text-slate-700 dark:text-slate-300 hover:bg-slate-500/5 dark:hover:bg-slate-400/5 transition"
-            aria-label="Toggle Menu"
-          >
-            <span className="text-sm font-bold">{open ? "CLOSE" : "MENU"}</span>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Shell Dropdown Overlay */}
-      <div
-        className={`md:hidden border-b border-slate-200/40 dark:border-slate-800/80 bg-slate-50/90 dark:bg-slate-950/90 backdrop-blur-md transition-all duration-300 ease-in-out ${open ? "max-h-screen opacity-100 visible" : "max-h-0 opacity-0 invisible overflow-hidden"
-          }`}
-      >
-        <ul className="px-6 py-5 space-y-3 text-xs font-bold text-slate-500 dark:text-slate-500">
-          {navLinks.map((link) => {
-            const isActive = location.pathname === link.href;
-
-            return (
-              <li key={link.name} className="flex items-center gap-1">
-                <span className="text-slate-300 dark:text-slate-800 select-none">~_</span>
-                <Link
-                  to={link.href}
-                  onClick={() => setOpen(false)}
-                  className={`block py-1 transition-colors ${isActive ? "text-teal-500 dark:text-teal-400" : "hover:text-slate-800 dark:hover:text-slate-200"
-                    }`}
-                >
-                  {link.name}()
-                </Link>
-              </li>
-            );
-          })}
-
-          <li className="pt-4 border-t border-slate-200/40 dark:border-slate-800/60">
+          <li className="pt-4 border-t border-zinc-100 dark:border-zinc-800">
             <Link
               to="/contact"
               onClick={() => setOpen(false)}
-              className="block w-full text-center border border-slate-900 text-slate-900 dark:border-slate-100 dark:text-slate-100 px-4 py-2 rounded-md font-bold text-xs"
+              className="block w-full text-center bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-950 px-4 py-2.5 rounded font-medium text-xs tracking-wide"
             >
-              ./execute_contact_routine
+              Get In Touch
             </Link>
           </li>
         </ul>

@@ -19,7 +19,7 @@ function PageTransition({ children }) {
 
       {/* 3D Page Wrapper */}
       <motion.div
-        className="w-full min-h-screen bg-transparent shadow-2xl"
+        className="w-full min-h-screen z-10 bg-transparent shadow-2xl"
         style={{
           transformStyle: "preserve-3d",
           transformOrigin: "center center",

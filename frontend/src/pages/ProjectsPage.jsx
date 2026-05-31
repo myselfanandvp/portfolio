@@ -1,111 +1,105 @@
+import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import PageTransition from "../components/PageTransition";
 import ChromaGrid from "../components/animations/ChromaGrid";
-import Brilworx from "../assets/Brilworx.png"
-import Manjaro from "../assets/Manjaro.png"
-import Netflix from "../assets/Netflix.png"
-import Olx from "../assets/Olx.png"
-import Wavelift from "../assets/Wavelift.png"
-import Website from "../assets/OfficalWebsite.png"
-function ProjectsPage() {
+import Brilworx from "../assets/Brilworx.png";
+import Manjaro from "../assets/Manjaro.png";
+import Netflix from "../assets/Netflix.png";
+import Olx from "../assets/Olx.png";
+import Wavelift from "../assets/Wavelift.png";
+import Website from "../assets/OfficalWebsite.png";
 
+function ProjectsPage() {
   const items = [
     {
       image: Wavelift,
       title: "WaveLift Legal Claims Platform",
       subtitle: "Full-stack enterprise legal & insurance workflow system built with Django",
-      handle: "@wavelift",
-      borderColor: "#e176c8",
-      gradient: "linear-gradient(145deg, #e176c8, #792CA2)",
+      handle: "01 // Enterprise System",
+      borderColor: "border-zinc-300 dark:border-zinc-800",
+      accentColor: "group-hover:text-amber-500",
       url: "https://www.wavelift.dpdns.org/",
     },
     {
       image: Manjaro,
       title: "Manjaro Landing Page Clone",
       subtitle: "Fully responsive modern UI clone developed using HTML & Tailwind CSS",
-      handle: "@manjaroclone",
-      borderColor: "#5798b4",
-      gradient: "linear-gradient(210deg, #5798b4, #4d585f)",
+      handle: "02 // UI Architecture",
+      borderColor: "border-amber-500/50 dark:border-amber-500/30",
+      accentColor: "text-amber-500 dark:text-amber-400",
       url: "https://myselfanandvp.github.io/Manjaro_org_clone/",
     },
     {
       image: Brilworx,
       title: "Brilworx Corporate Website",
       subtitle: "Responsive business website crafted using HTML and Tailwind CSS",
-      handle: "@brilworx",
-      borderColor: "#fde17d",
-      gradient: "linear-gradient(165deg, #fde17d, #70d2c1)",
+      handle: "03 // Web Layout",
+      borderColor: "border-zinc-300 dark:border-zinc-800",
+      accentColor: "group-hover:text-amber-500",
       url: "https://myselfanandvp.github.io/-Brilworx/",
     },
     {
       image: Netflix,
       title: "Netflix UI Clone",
       subtitle: "Interactive streaming platform clone powered by React.js and Firebase",
-      handle: "@netflixclone",
-      borderColor: "#3b2b2e",
-      gradient: "linear-gradient(145deg, #3b2b2e, #e13d46)",
+      handle: "04 // Client Application",
+      borderColor: "border-zinc-300 dark:border-zinc-800",
+      accentColor: "group-hover:text-amber-500",
       url: "https://github.com/myselfanandvp/Netflix-clone",
     },
     {
       image: Olx,
       title: "OLX Marketplace Clone",
       subtitle: "Responsive marketplace application using React.js and Firebase backend",
-      handle: "@olxclone",
-      borderColor: "#6791f0",
-      gradient: "linear-gradient(145deg, #6791f0, #cb5e83)",
+      handle: "05 // Distribution App",
+      borderColor: "border-zinc-300 dark:border-zinc-800",
+      accentColor: "group-hover:text-amber-500",
       url: "https://github.com/myselfanandvp/olx-clone",
     },
     {
       image: Website,
       title: "My Official Website",
-      subtitle:
-        "Personal portfolio website hosted on GitHub Pages, showcasing my projects, skills, tech stack, and contact information with a clean responsive design.",
-      handle: "@OfficialWebsite",
-      borderColor: "#9252ff",
-      gradient: "linear-gradient(145deg, #9252ff,#050505)",
+      subtitle: "Personal portfolio website hosting system, showcasing engineering models and clean responsive architecture.",
+      handle: "06 // Engineering Hub",
+      borderColor: "border-amber-500/50 dark:border-amber-500/30",
+      accentColor: "text-amber-500 dark:text-amber-400",
       url: "https://myselfanandvp.github.io/officialwebsite/",
     },
   ];
+
   return (
     <PageTransition>
-      {/* Main Page Layout Wrapper */}
-      <section className="relative z-10 flex flex-col items-center min-h-[calc(100vh-80px)] px-4 sm:px-6 py-16 md:py-24 max-w-6xl mx-auto w-full overflow-hidden">
+      {/* Structural Projects Wrapper - Configured with justify-center and py-12 for exact viewport centering */}
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 py-20 max-w-7xl mx-auto w-full font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden selection:bg-amber-500/20">
 
-        {/* Header content grouped to preserve vertical flow */}
-        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 md:mb-16">
-          {/* Cute Animated Badge */}
-          <div className="mb-6 animate-bounce [animation-duration:3s]">
-            <span className="inline-flex items-center gap-1.5 bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-900/50 text-blue-600 dark:text-blue-400 px-4 py-1.5 rounded-full text-sm font-medium tracking-wide shadow-sm">
-              🚀 My creations
-            </span>
-          </div>
-
-          {/* Beautiful Gradient Title */}
-          <h1 className="text-4xl md:text-6xl font-black tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-rose-500 dark:from-blue-400 dark:via-purple-400 dark:to-rose-400 drop-shadow-sm pb-2">
-            Featured Work
-          </h1>
-
-          <p className="mt-4 text-slate-600 dark:text-slate-400 font-medium text-base md:text-lg">
-            A selection of enterprise application solutions, custom automation pipelines, and core full-stack builds.
-          </p>
+        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.01] pointer-events-none mix-blend-difference">
         </div>
 
-        <div style={{ height: 'auto', position: 'relative' }}>
-          <ChromaGrid
-            items={items}
-            radius={300}
-            damping={0.8}
-            fadeOut={1.2}
-            ease="power3.out"
-          />
+        {/* Minimal Context Indicator */}
+        <div className="mb-2 flex items-center gap-2 z-20">
+          <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
+          <span className="text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+            Production Ledger
+          </span>
         </div>
 
-        {/* Ambient Floating Icons - Hidden on small screens to avoid clipping/clutter */}
-        <div className="hidden sm:block absolute top-24 left-4 md:left-8 text-4xl pointer-events-none animate-float opacity-20 dark:opacity-30">🛠️</div>
-        <div className="hidden sm:block absolute bottom-32 left-6 md:left-12 text-3xl pointer-events-none animate-float [animation-delay:1.5s] opacity-20 dark:opacity-30">📦</div>
-        <div className="hidden sm:block absolute top-32 right-6 md:right-12 text-4xl pointer-events-none animate-float [animation-delay:0.7s] opacity-20 dark:opacity-30">💎</div>
-        <div className="hidden sm:block absolute bottom-24 right-8 md:right-16 text-3xl pointer-events-none animate-float [animation-delay:2.2s] opacity-20 dark:opacity-30">🔧</div>
+        {/* Crisp Architectural Heading */}
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center z-20">
+          Selected Engineering Models
+        </h1>
+        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-2 z-20"></div>
+
+        {/* Subtitle Description Element */}
+        <p className="max-w-md text-center text-zinc-500 dark:text-zinc-400 font-normal text-xs sm:text-sm mt-3 mb-8 leading-relaxed z-20">
+          An architectural ledger of full-stack builds, client interfaces, and production application deployments.
+        </p>
+
+        {/* Unified Geometry Grid */}
+
+        <ChromaGrid items={items} />
+
       </section>
-    </PageTransition >
+
+    </PageTransition>
   );
 }
 
