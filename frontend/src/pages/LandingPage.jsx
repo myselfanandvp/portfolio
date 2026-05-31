@@ -1,6 +1,6 @@
 import PageTransition from "../components/PageTransition";
 import { Link } from "react-router-dom";
-
+import { FaAngleDoubleRight } from 'react-icons/fa';
 function LandingPage() {
   return (
     <PageTransition>
@@ -44,15 +44,17 @@ function LandingPage() {
             <div className="mt-10 flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center px-6 py-3 rounded bg-amber-600 hover:bg-amber-500 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-zinc-950 font-semibold text-sm tracking-wide transition-all duration-200 shadow-md shadow-amber-600/10 dark:shadow-amber-500/10"
+                className="inline-flex gap-2 items-center justify-center px-6 py-3 rounded bg-amber-600 hover:bg-amber-500 dark:bg-amber-500 dark:hover:bg-amber-400 text-white dark:text-zinc-950 font-semibold text-sm tracking-wide transition-all duration-200 shadow-md shadow-amber-600/10 dark:shadow-amber-500/10"
               >
+                <FaAngleDoubleRight />
                 Explore Engineering Portfolio
               </Link>
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-6 py-3 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-white transition-all duration-200"
+                className="inline-flex items-center gap-2 justify-center px-6 py-3 rounded border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900/50 text-zinc-700 dark:text-zinc-300 text-sm font-medium hover:bg-zinc-50 dark:hover:bg-zinc-800/60 hover:text-zinc-900 dark:hover:text-white transition-all duration-200"
               >
+                <FaAngleDoubleRight />
                 Initiate Consultation
               </Link>
             </div>

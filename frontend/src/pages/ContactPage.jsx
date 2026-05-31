@@ -1,9 +1,29 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import BorderGlow from "../components/animations/GlowingBorder";
 import PageTransition from "../components/PageTransition";
-import { useSelector } from "react-redux";
-
+import { FaAddressCard, FaGithub, FaLinkedinIn, FaMailBulk } from 'react-icons/fa';
 function ContactPage() {
-  const darkMode = useSelector(state => state.theme.darkMode)
+  const emailAddress = "mailanandvp@gmail.com";
+  const [isCopied, setIsCopied] = useState(false);
+  const darkMode = useSelector((state) => state.theme.darkMode);
+
+  const copy = async (text) => {
+    if (!window?.navigator?.clipboard) {
+      console.warn("Clipboard API not supported");
+      return false;
+    }
+    try {
+      await window.navigator.clipboard.writeText(text);
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
+      return true;
+    } catch (error) {
+      console.warn("Copy failed", error);
+      return false;
+    }
+  };
+
   return (
     <PageTransition>
       {/* Structural Contact Section Layout */}
@@ -32,23 +52,47 @@ function ContactPage() {
 
           {/* Left Column: Minimal Metric Cards */}
           <div className="md:col-span-2 space-y-4 w-full">
-            <div className="bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 p-5 rounded-xl shadow-sm">
+            <div className="bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 p-5 rounded-xl shadow-sm relative overflow-hidden">
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 01 // Direct Address
               </div>
-              <a
-                href="mailto:mailanandvp@gmail.com"
-                className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors break-all"
-              >
-                mailanandvp@gmail.com
-              </a>
+              <div className="flex items-center justify-between gap-1 mt-2">
+
+                <span>
+                  <FaMailBulk />
+                </span>
+                <a
+                  href={`mailto:${emailAddress}`}
+                  className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors break-all"
+                >
+                  {emailAddress}
+                </a>
+
+                <div className="flex items-center gap-2 relative">
+                  <button
+                    onClick={() => copy(emailAddress)}
+                    className="text-xs font-medium bg-zinc-100 hover:bg-amber-500 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 dark:hover:bg-amber-400 dark:hover:text-black hover:text-black px-2.5 py-1 rounded border border-zinc-300 dark:border-zinc-700 transition-colors duration-150"
+                  >
+                    Copy
+                  </button>
+
+                  {isCopied && (
+                    <span className="absolute right-0 -top-8 text-[10px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 border border-amber-500/20 rounded px-1.5 py-0.5 animate-fade-in-up">
+                      Copied!
+                    </span>
+                  )}
+                </div>
+              </div>
             </div>
 
             <div className="bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 p-5 rounded-xl shadow-sm">
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 02 // Base Location
               </div>
-              <div className="text-sm font-semibold text-zinc-800 dark:text-zinc-200">
+              <span>
+                <FaAddressCard />
+              </span>
+              <div className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-2">
                 Kerala, India
               </div>
             </div>
@@ -60,6 +104,11 @@ function ContactPage() {
                 rel="noreferrer"
                 className="flex flex-col items-center gap-1 group w-1/2 text-center"
               >
+                <span>
+                  <FaGithub />
+                </span>
+
+
                 <span className="text-xs font-bold tracking-wider uppercase text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
                   GitHub
                 </span>
@@ -71,6 +120,9 @@ function ContactPage() {
                 rel="noreferrer"
                 className="flex flex-col items-center gap-1 group w-1/2 text-center"
               >
+                <span>
+                  <FaLinkedinIn />
+                </span>
                 <span className="text-xs font-bold tracking-wider uppercase text-zinc-400 dark:text-zinc-500 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors">
                   LinkedIn
                 </span>
@@ -81,11 +133,10 @@ function ContactPage() {
           {/* Right Column: Architectural Form Frame */}
           <BorderGlow
             glowIntensity={20}
-            className="md:col-span-3 p-3 bg-white dark:bg-zinc-800"
+            className="md:col-span-3 p-3 bg-white dark:bg-zinc-800 rounded-[14px]"
             backgroundColor={darkMode ? "black" : "white"}
           >
             <form className="bg-white dark:bg-black p-6 md:p-8 space-y-6 rounded-[11px]">
-
               {/* Name Block */}
               <div className="group relative space-y-1.5">
                 <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-mono">

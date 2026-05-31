@@ -46,54 +46,54 @@ function AboutPage() {
             <BorderGlow
               glowIntensity={15}
               glowRadius={30}
-              className="p-3 lg:col-span-5 flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-sm"
+              className="lg:col-span-5 flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-950/10 w-full rounded-xl p-3"
               backgroundColor={darkMode ? "black" : "white"}
             >
-              <div className="flex flex-col flex-1 w-full p-5 md:p-6 rounded-xl  bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
+              <div className="flex flex-col flex-1 w-full p-6 md:p-8 rounded-xl border border-zinc-200/60 dark:border-zinc-800/50 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300 justify-between gap-8">
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-wider mb-4 text-zinc-900 dark:text-zinc-200 border-b border-zinc-100 dark:border-zinc-900 pb-2 font-mono">
+                  <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-zinc-900 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-900 pb-3 font-mono">
                     Technical Blueprint
                   </h3>
 
-                  <div className="grid grid-cols-1 gap-4 text-xs">
-                    <div className="space-y-1">
-                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
+                    <div className="space-y-1.5">
+                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
                         01 // Service Stack
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs">
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
                         Python, Django, DRF, Node.js, FastAPIs, .NET Core, PHP
                       </div>
                     </div>
 
-                    <div className="space-y-1">
-                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                    <div className="space-y-1.5">
+                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
                         02 // Client Layer
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs">
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
                         React.js, Redux Toolkit, JS (ES6+), Tailwind, Next.js UI
                       </div>
                     </div>
 
-                    <div className="space-y-1">
-                      <div className="tracking-wide text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px]">
+                    <div className="space-y-1.5">
+                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
                         03 // Infra & Storage
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-[11px] sm:text-xs line-clamp-2 lg:line-clamp-none">
+                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
                         PostgreSQL, MS SQL, MySQL, MongoDB, Redis, Pandas, Git, Linux
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className="mt-4 pt-3 border-t border-zinc-100 dark:border-zinc-900/60 flex items-center justify-between text-[10px] text-zinc-500 dark:text-zinc-400 font-mono">
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Modular
+                <div className="pt-4 border-t border-zinc-100 dark:border-zinc-900/60 flex items-center justify-between text-[10px] text-zinc-400 dark:text-zinc-500 font-mono tracking-wider font-semibold">
+                  <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Modular
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Efficiency
+                  <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Efficiency
                   </span>
-                  <span className="flex items-center gap-1.5">
-                    <span className="w-1 h-1 bg-amber-500 rounded-full"></span> Pure Pipelines
+                  <span className="flex items-center gap-2">
+                    <span className="w-1.5 h-1.5 bg-amber-500 rounded-full"></span> Pure Pipelines
                   </span>
                 </div>
               </div>

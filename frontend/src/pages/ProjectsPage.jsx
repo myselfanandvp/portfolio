@@ -1,12 +1,11 @@
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import PageTransition from "../components/PageTransition";
 import ChromaGrid from "../components/animations/ChromaGrid";
-import Brilworx from "../assets/Brilworx.png";
-import Manjaro from "../assets/Manjaro.png";
-import Netflix from "../assets/Netflix.png";
-import Olx from "../assets/Olx.png";
-import Wavelift from "../assets/Wavelift.png";
-import Website from "../assets/OfficalWebsite.png";
+import Brilworx from "../assets/Brilworx.jpg";
+import Manjaro from "../assets/Manjaro.jpg";
+import Netflix from "../assets/Netflix.jpg";
+import Olx from "../assets/Olx.jpg";
+import Wavelift from "../assets/Wavelift.jpg";
+import Website from "../assets/OfficalWebsite.jpg";
 
 function ProjectsPage() {
   const items = [

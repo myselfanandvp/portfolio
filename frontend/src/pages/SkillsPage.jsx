@@ -1,23 +1,26 @@
+import { useSelector } from "react-redux";
 import BorderGlow from "../components/animations/GlowingBorder";
 import PageTransition from "../components/PageTransition";
 
 function SkillsPage() {
+  const darkMode = useSelector((state) => state.theme.darkMode);
+
   const skillCategories = [
     {
       index: "01 // UI Architecture",
       title: "Frontend Development",
-      skills: ["React.js", "Redux Toolkit", "Tailwind CSS", "Vite", "JavaScript (ES6+)"]
+      skills: ["React.js", "Redux Toolkit", "Tailwind CSS", "Vite", "JavaScript (ES6+)"],
     },
     {
       index: "02 // Systems & Integration",
       title: "Backend & Data Engines",
-      skills: ["Python", "Django / DRF", "MS SQL Server", "PostgreSQL", "Pandas ETL"]
+      skills: ["Python", "Django / DRF", "PostgreSQL", "MS SQL Server", "Pandas ETL"],
     },
     {
       index: "03 // Runtime & Environment",
       title: "Tools & Workspace",
-      skills: ["Git & GitHub", "Linux Systems", "Postman APIs", "SSMS", "Node.js / .NET Core"]
-    }
+      skills: ["Git & GitHub", "Linux Systems", "Postman APIs", "SSMS", "Node.js / .NET Core"],
+    },
   ];
 
   return (
@@ -43,14 +46,14 @@ function SkillsPage() {
           Languages, core frameworks, storage architectures, and environments deployed to maintain runtime performance.
         </p>
 
-        {/* Unified Geometry Grid */}
-        <div className="grid md:grid-cols-3 gap-6 w-full justify-center items-stretch z-20">
+        {/* Unified Geometry Grid - Enhanced with responsive breakdown */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full justify-center items-stretch z-20">
           {skillCategories.map((category, idx) => (
             <BorderGlow
               key={idx}
               glowIntensity={20}
-              className="flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-2xl"
-              backgroundColor="bg-transparent"
+              className="flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-2xl p-2"
+              backgroundColor={darkMode ? "black" : "white"}
             >
               {/* Structural Content Container Block */}
               <div className="flex flex-col flex-1 w-full p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
