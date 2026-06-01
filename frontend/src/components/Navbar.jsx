@@ -27,7 +27,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 z-50 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
+    <nav className="fixed top-0 left-0 z-80 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Brand / Professional Identity */}

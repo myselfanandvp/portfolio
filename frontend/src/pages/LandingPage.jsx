@@ -4,7 +4,7 @@ import { FaAngleDoubleRight } from 'react-icons/fa';
 function LandingPage() {
   return (
     <PageTransition>
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 max-w-7xl mx-auto font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 max-w-7xl mx-auto font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden mb-2">
 
         {/* Ambient Top Subtle Glow (Adapts per theme) */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.08),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.04),transparent_50%)] pointer-events-none -z-10" />
@@ -62,7 +62,7 @@ function LandingPage() {
 
           {/* RIGHT: FULL-STACK ECOSYSTEM DIAGRAM (5 Columns) */}
           <div className="lg:col-span-5 w-full flex justify-center lg:justify-end">
-            <div className="w-full max-w-md bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80 rounded-xl p-6 shadow-xl dark:shadow-2xl relative backdrop-blur-md">
+            <div className="w-full max-w-md bg-gray-300  dark:bg-zinc-900/40 border border-zinc-200  dark:border-zinc-800/80  p-6 shadow-xl dark:shadow-2xl relative backdrop-blur-md overflow-hidden [clip-path:polygon(0%_0%,92%_0%,100%_8%,100%_100%,8%_100%,0%_92%)]" >
 
               {/* Module Header */}
               <div className="flex items-center justify-between border-b border-zinc-100 dark:border-zinc-800/60 pb-4 mb-6">

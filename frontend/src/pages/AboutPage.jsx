@@ -51,38 +51,58 @@ function AboutPage() {
             >
               <div className="flex flex-col flex-1 w-full p-6 md:p-8 rounded-xl border border-zinc-200/60 dark:border-zinc-800/50 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300 justify-between gap-8">
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-widest mb-6 text-zinc-900 dark:text-zinc-100 border-b border-zinc-100 dark:border-zinc-900 pb-3 font-mono">
+                  {/* Header - Maximized light/dark contrast */}
+                  <h3 className="text-xs font-black uppercase tracking-widest mb-6 text-zinc-950 dark:text-zinc-50 border-b border-zinc-400/60 dark:border-zinc-700 pb-3 font-mono">
                     Technical Blueprint
                   </h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4">
-                    <div className="space-y-1.5">
-                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
+                  {/* High-visibility Content Rows */}
+                  <div className="flex flex-col gap-6">
+
+                    {/* Row 01 */}
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-1.5 sm:gap-4 items-start">
+                      <div className="tracking-widest text-zinc-600 dark:text-zinc-400 uppercase font-mono text-[9px] sm:text-[10px] font-extrabold sm:pt-0.5">
                         01 // Service Stack
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
+                      <div className="sm:col-span-3 text-zinc-950 dark:text-zinc-100 font-bold text-xs sm:text-sm leading-relaxed breakdown-words">
                         Python, Django, DRF, Node.js, FastAPIs, .NET Core, PHP
                       </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
+                    {/* Row 02 */}
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-1.5 sm:gap-4 items-start">
+                      <div className="tracking-widest text-zinc-600 dark:text-zinc-400 uppercase font-mono text-[9px] sm:text-[10px] font-extrabold sm:pt-0.5">
                         02 // Client Layer
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
+                      <div className="sm:col-span-3 text-zinc-950 dark:text-zinc-100 font-bold text-xs sm:text-sm leading-relaxed breakdown-words">
                         React.js, Redux Toolkit, JS (ES6+), Tailwind, Next.js UI
                       </div>
                     </div>
 
-                    <div className="space-y-1.5">
-                      <div className="tracking-widest text-zinc-400 dark:text-zinc-500 uppercase font-mono text-[9px] font-semibold">
+                    {/* Row 03 */}
+                    <div className="grid grid-cols-1 sm:grid-cols-4 gap-1.5 sm:gap-4 items-start">
+                      <div className="tracking-widest text-zinc-600 dark:text-zinc-400 uppercase font-mono text-[9px] sm:text-[10px] font-extrabold sm:pt-0.5">
                         03 // Infra & Storage
                       </div>
-                      <div className="text-zinc-800 dark:text-zinc-300 font-medium text-xs sm:text-sm leading-relaxed">
+                      <div className="sm:col-span-3 text-zinc-950 dark:text-zinc-100 font-bold text-xs sm:text-sm leading-relaxed breakdown-words">
                         PostgreSQL, MS SQL, MySQL, MongoDB, Redis, Pandas, Git, Linux
                       </div>
                     </div>
+
                   </div>
+                </div>
+
+                {/* Footer Status Elements - Dynamic stack on mobile viewports to prevent layout overlap */}
+                <div className="pt-4 border-t border-zinc-400/60 dark:border-zinc-700 grid grid-cols-1 gap-2.5 xs:grid-cols-3 xs:gap-0 text-[10px] text-zinc-700 dark:text-zinc-300 font-mono tracking-wider font-black">
+                  <span className="flex items-center gap-2 justify-start">
+                    <span className="w-2 h-2 bg-amber-600 dark:bg-amber-400 rounded-full shrink-0"></span> Modular
+                  </span>
+                  <span className="flex items-center gap-2 xs:justify-center">
+                    <span className="w-2 h-2 bg-amber-600 dark:bg-amber-400 rounded-full shrink-0"></span> Efficiency
+                  </span>
+                  <span className="flex items-center gap-2 xs:justify-end">
+                    <span className="w-2 h-2 bg-amber-600 dark:bg-amber-400 rounded-full shrink-0"></span> Pure Pipelines
+                  </span>
                 </div>
 
                 <div className="pt-4 border-t border-zinc-100 dark:border-zinc-900/60 flex items-center justify-between text-[10px] text-zinc-400 dark:text-zinc-500 font-mono tracking-wider font-semibold">
@@ -155,7 +175,7 @@ function AboutPage() {
         {/* Action Footer Link */}
         <Link
           to="/"
-          className="mt-8 z-20 inline-flex items-center justify-center bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase px-5 py-2.5 rounded border border-zinc-900 dark:border-zinc-100 hover:bg-transparent dark:hover:bg-transparent hover:text-zinc-950 dark:hover:text-zinc-100 transition-all duration-300"
+          className="[clip-path:polygon(0_0,100%_0,90%_100%,10%_100%)] mt-8 z-20 inline-flex items-center justify-center bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase px-7 py-2.5 hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-300"
         >
           Return to Hub
         </Link>

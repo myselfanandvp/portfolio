@@ -27,7 +27,7 @@ function ContactPage() {
   return (
     <PageTransition>
       {/* Structural Contact Section Layout */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20 mb-2">
 
         {/* Minimal Context Indicator */}
         <div className="mb-4 flex items-center gap-2">
@@ -56,7 +56,7 @@ function ContactPage() {
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 01 // Direct Address
               </div>
-              <div className="flex items-center justify-between gap-1 mt-2">
+              <div className="flex items-center justify-between  mt-2">
 
                 <span>
                   <FaMailBulk />
@@ -89,10 +89,11 @@ function ContactPage() {
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 02 // Base Location
               </div>
-              <span>
-                <FaAddressCard />
-              </span>
-              <div className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 mt-2">
+
+              <div className="text-sm flex justify-between items-center  font-semibold text-zinc-800 dark:text-zinc-200 mt-2">
+                <span>
+                  <FaAddressCard />
+                </span>
                 Kerala, India
               </div>
             </div>

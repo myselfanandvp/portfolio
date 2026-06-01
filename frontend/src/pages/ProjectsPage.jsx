@@ -68,7 +68,7 @@ function ProjectsPage() {
   return (
     <PageTransition>
       {/* Structural Projects Wrapper - Configured with justify-center and py-12 for exact viewport centering */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 py-20 max-w-7xl mx-auto w-full font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden selection:bg-amber-500/20">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 py-20 max-w-7xl mx-auto w-full font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden selection:bg-amber-500/20 mb-2">
 
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.01] pointer-events-none mix-blend-difference">
         </div>

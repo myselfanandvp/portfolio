@@ -26,7 +26,7 @@ function SkillsPage() {
   return (
     <PageTransition>
       {/* Structural Skills Section Wrapper */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20 mb-2">
 
         {/* Minimal Context Indicator */}
         <div className="mb-4 flex items-center gap-2">
