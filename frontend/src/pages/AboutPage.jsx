@@ -2,6 +2,7 @@ import PageTransition from "../components/PageTransition";
 import BorderGlow from "../components/animations/GlowingBorder";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Clipshape from "../components/Clipshape";
 function AboutPage() {
   const darkMode = useSelector(state => state.theme.darkMode)
   return (
@@ -18,11 +19,10 @@ function AboutPage() {
         </div>
 
         {/* Crisp Architectural Heading */}
-        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center z-20">
           About Me
         </h1>
-        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-2 mb-8"></div>
-
+        <Clipshape />
         {/* High-Density Dashboard Grid */}
         <div className="w-full space-y-6 z-20">
 
@@ -175,7 +175,8 @@ function AboutPage() {
         {/* Action Footer Link */}
         <Link
           to="/"
-          className="[clip-path:polygon(0_0,100%_0,90%_100%,10%_100%)] mt-8 z-20 inline-flex items-center justify-center bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase px-7 py-2.5 hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-300"
+          className="mt-8 z-20 inline-flex items-center justify-center px-12 bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase py-2.5 hover:bg-amber-500 dark:hover:bg-amber-500 hover:text-zinc-950 dark:hover:text-zinc-950 transition-all duration-300"
+          style={{ clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0 100%)" }}
         >
           Return to Hub
         </Link>

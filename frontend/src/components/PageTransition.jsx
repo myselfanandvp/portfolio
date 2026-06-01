@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 function PageTransition({ children }) {
   return (
     <div
-      className="relative w-full min-h-screen bg-transparent overflow-hidden"
+      className="relative w-full min-h-screen bg-transparent overflow-hidden py-2  shadow-xl"
       style={{
         perspective: "1200px",
       }}

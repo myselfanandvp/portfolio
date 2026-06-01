@@ -6,6 +6,7 @@ import Netflix from "../assets/Netflix.jpg";
 import Olx from "../assets/Olx.jpg";
 import Wavelift from "../assets/Wavelift.jpg";
 import Website from "../assets/OfficalWebsite.jpg";
+import Clipshape from "../components/Clipshape";
 
 function ProjectsPage() {
   const items = [
@@ -68,7 +69,7 @@ function ProjectsPage() {
   return (
     <PageTransition>
       {/* Structural Projects Wrapper - Configured with justify-center and py-12 for exact viewport centering */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 py-20 max-w-7xl mx-auto w-full font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden selection:bg-amber-500/20 mb-2">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 py-20 max-w-7xl mx-auto w-full font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden selection:bg-amber-500/20 ">
 
         <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.01] pointer-events-none mix-blend-difference">
         </div>
@@ -85,8 +86,7 @@ function ProjectsPage() {
         <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center z-20">
           Selected Engineering Models
         </h1>
-        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-2 z-20"></div>
-
+        <Clipshape />
         {/* Subtitle Description Element */}
         <p className="max-w-md text-center text-zinc-500 dark:text-zinc-400 font-normal text-xs sm:text-sm mt-3 mb-8 leading-relaxed z-20">
           An architectural ledger of full-stack builds, client interfaces, and production application deployments.

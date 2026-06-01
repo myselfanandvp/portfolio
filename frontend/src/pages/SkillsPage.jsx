@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import BorderGlow from "../components/animations/GlowingBorder";
 import PageTransition from "../components/PageTransition";
+import Clipshape from "../components/Clipshape";
 
 function SkillsPage() {
   const darkMode = useSelector((state) => state.theme.darkMode);
@@ -26,22 +27,21 @@ function SkillsPage() {
   return (
     <PageTransition>
       {/* Structural Skills Section Wrapper */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20 mb-2">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
 
         {/* Minimal Context Indicator */}
         <div className="mb-4 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-          <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
             Technical Matrix
           </span>
         </div>
 
         {/* Crisp Architectural Heading */}
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-2 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center z-20">
           Skills & Tech Stack
         </h1>
-        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-1 mb-6"></div>
-
+        <Clipshape />
         <p className="max-w-md text-center text-zinc-500 dark:text-zinc-400 font-normal text-sm md:text-base mb-16 leading-relaxed">
           Languages, core frameworks, storage architectures, and environments deployed to maintain runtime performance.
         </p>
@@ -73,7 +73,11 @@ function SkillsPage() {
                   {category.skills.map((skill, sIdx) => (
                     <li
                       key={sIdx}
-                      className="group flex items-center justify-between p-3 rounded-lg bg-zinc-500/5 dark:bg-zinc-400/5 border border-zinc-200/30 dark:border-zinc-800/30 transition-all duration-200 hover:bg-zinc-500/10 dark:hover:bg-zinc-400/10"
+                      className="group flex items-center justify-between p-3 px-13 rounded-lg bg-zinc-500/10  dark:bg-zinc-400/20 border border-zinc-200/30 dark:border-zinc-400/30 transition-all duration-200 hover:bg-zinc-500/45 dark:hover:bg-zinc-400/45"
+                      style={{
+                        clipPath:
+                          "polygon(75% 0%, 90% 50%, 75% 100%, 0% 100%, 13% 50%, 0% 0%)",
+                      }}
                     >
                       <span className="text-xs md:text-sm font-medium text-zinc-800 dark:text-zinc-300 transition-transform duration-150 group-hover:translate-x-0.5">
                         {skill}
@@ -89,7 +93,7 @@ function SkillsPage() {
           ))}
         </div>
       </section>
-    </PageTransition>
+    </PageTransition >
   );
 }
 

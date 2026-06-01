@@ -197,13 +197,6 @@ function SplashCursor({
       }
     `);
 
-    const copyShader = compileShader(gl.FRAGMENT_SHADER, `
-      precision mediump float;
-      precision mediump sampler2D;
-      varying highp vec2 vUv;
-      uniform sampler2D uTexture;
-      void main () { gl_FragColor = texture2D(uTexture, vUv); }
-    `);
 
     const clearShader = compileShader(gl.FRAGMENT_SHADER, `
       precision mediump float;
@@ -437,7 +430,6 @@ function SplashCursor({
 
     let dye, velocity, divergence, curl, pressure;
 
-    const copyProgram = new Program(baseVertexShader, copyShader);
     const clearProgram = new Program(baseVertexShader, clearShader);
     const splatProgram = new Program(baseVertexShader, splatShader);
     const advectionProgram = new Program(baseVertexShader, advectionShader);

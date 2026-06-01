@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 
-const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOut = 0.5, ease = 'power3.out' }) => {
+const ChromaGrid = ({ items, className = '', radius = 240, damping = 0.4, fadeOut = 0.5, ease = 'power3.out' }) => {
   const rootRef = useRef(null);
   const cardsRef = useRef([]);
   const setXRefs = useRef([]);
@@ -117,11 +117,8 @@ const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOu
   return (
     <div
       ref={rootRef}
-      /* FIXED: Changed flex-wrap layout to explicit CSS grid structures 
-         1 column on mobile, 2 columns on tablets, and exactly 4 columns on large screens.
-         Removed hardcoded w-[270px] constraints on individual elements so grid spans evenly.
-      */
-      className={`relative w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 justify-items-center gap-4 max-w-7xl mx-auto ${className}`}
+      /* FIXED: Changed 'gap-6' to 'gap-3' to tighten the spacing between your card divs */
+      className={`relative w-full h-full flex flex-wrap justify-center items-start gap-3 ${className}`}
     >
       {data.map((c, i) => (
         <article
@@ -130,8 +127,7 @@ const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOu
           onMouseMove={(e) => handleCardMouseMove(e, i)}
           onMouseLeave={() => handleCardMouseLeave(i)}
           onClick={() => handleCardClick(c.url)}
-          /* FIXED: Changed explicit w-[270px] to w-full max-w-[280px] to allow standard grid scaling to execute safely */
-          className="group relative flex flex-col w-full max-w-[280px] rounded-[20px] overflow-hidden border border-zinc-200/80 dark:border-zinc-800/40 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-md transition-all duration-300 cursor-pointer hover:shadow-xl hover:border-[var(--card-border)]"
+          className="group relative flex flex-col w-100 rounded-3xl overflow-hidden border border-zinc-200/80 dark:border-zinc-800/40 bg-white/70 dark:bg-zinc-900/50 backdrop-blur-md transition-all duration-300 cursor-pointer hover:shadow-xl hover:border-(--card-border)"
           style={{
             '--card-border': c.borderColor && !c.borderColor.includes('border-') ? c.borderColor : '#f59e0b',
             background: c.gradient || 'transparent',
@@ -150,8 +146,8 @@ const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOu
           />
 
           {/* Card Media Area */}
-          <div className="relative z-10 flex-1 p-2.5 box-border">
-            <div className="w-full h-[150px] overflow-hidden rounded-[12px] border border-zinc-200/40 dark:border-zinc-700/20">
+          <div className="relative z-10 flex-1 p-3 box-border">
+            <div className="w-full h-50 overflow-hidden rounded-2xl border border-zinc-200/40 dark:border-zinc-700/20">
               <img
                 src={c.image}
                 alt={c.title}
@@ -162,18 +158,18 @@ const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOu
           </div>
 
           {/* Card Meta Content */}
-          <footer className="relative z-10 p-3.5 font-sans flex flex-col gap-1.5 min-h-[95px] bg-white/30 dark:bg-zinc-900/20 border-t border-zinc-200/50 dark:border-zinc-800/30">
-            <div className="flex items-start justify-between gap-2">
-              <h3 className="text-[0.925rem] font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight line-clamp-1">
+          <footer className="relative z-10 p-4 font-sans flex flex-col gap-2 min-h-27.5 bg-white/30 dark:bg-zinc-900/20 border-t border-zinc-200/50 dark:border-zinc-800/30">
+            <div className="flex items-start justify-between flex-col gap-3">
+              <h3 className="text-[1rem] font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight">
                 {c.title}
               </h3>
               {c.handle && (
-                <span className="text-[0.7rem] font-mono font-bold tracking-wider text-amber-600 dark:text-amber-400 shrink-0 uppercase">
+                <span className="text-[0.75rem] font-mono font-bold tracking-wider text-amber-600 dark:text-amber-400 shrink-0 uppercase">
                   {c.handle}
                 </span>
               )}
             </div>
-            <p className="text-[0.775rem] font-normal leading-normal text-zinc-500 dark:text-zinc-400 line-clamp-2">
+            <p className="text-[0.825rem] font-normal leading-relaxed text-zinc-500 dark:text-zinc-400">
               {c.subtitle}
             </p>
           </footer>
@@ -195,7 +191,7 @@ const ChromaGrid = ({ items, className = '', radius = 200, damping = 0.4, fadeOu
           {/* IDLE MASK */}
           <div
             ref={el => (fadeRefs.current[i] = el)}
-            className="absolute inset-0 pointer-events-none transition-opacity duration-[250ms] z-40"
+            className="absolute inset-0 pointer-events-none transition-opacity duration-250 z-40"
             style={{
               backdropFilter: 'grayscale(1) brightness(0.85)',
               WebkitBackdropFilter: 'grayscale(1) brightness(0.85)',

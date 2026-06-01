@@ -27,7 +27,7 @@ function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 z-80 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
+    <nav className="fixed top-0 left-0 z-50 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
         {/* Brand / Professional Identity */}
@@ -59,7 +59,11 @@ function Navbar() {
                 </Link>
                 {/* Active Indicator Underline */}
                 {isActive && (
-                  <span className="absolute bottom-0 left-0 w-full h-[1.5px] bg-amber-500 rounded-full" />
+                  <span className="absolute bottom-0 left-0 w-full h-1 bg-amber-500 rounded-full" style={{
+                    clipPath:
+                      "polygon(58% 44%, 100% 41%, 100% 57%, 72% 58%, 17% 60%, 80% 50%, 0% 49%)",
+                  }}
+                  />
                 )}
               </li>
             );

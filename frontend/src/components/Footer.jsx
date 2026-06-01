@@ -11,7 +11,7 @@ function Footer() {
   ];
 
   return (
-    <footer className="z-50 relative w-full z-50 w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
+    <footer className="z-40 relative  w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-12">
 
         {/* Top Section: Architectural Directory Grid */}

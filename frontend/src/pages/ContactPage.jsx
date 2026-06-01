@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import BorderGlow from "../components/animations/GlowingBorder";
 import PageTransition from "../components/PageTransition";
 import { FaAddressCard, FaGithub, FaLinkedinIn, FaMailBulk } from 'react-icons/fa';
+import Clipshape from "../components/Clipshape";
 function ContactPage() {
   const emailAddress = "mailanandvp@gmail.com";
   const [isCopied, setIsCopied] = useState(false);
@@ -27,21 +28,21 @@ function ContactPage() {
   return (
     <PageTransition>
       {/* Structural Contact Section Layout */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20 mb-2">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
 
         {/* Minimal Context Indicator */}
         <div className="mb-4 flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
-          <span className="text-xs font-semibold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
+          <span className="text-[10px] font-bold tracking-widest uppercase text-zinc-400 dark:text-zinc-500">
             Inbound Communications
           </span>
         </div>
 
         {/* Crisp Architectural Heading */}
-        <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-2 text-center">
+        <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-zinc-900 dark:text-zinc-100 pb-1 text-center z-20">
           Get In Touch
         </h1>
-        <div className="w-12 h-[2px] bg-amber-500 rounded-full mt-1 mb-6"></div>
+        <Clipshape />
 
         <p className="max-w-md text-center text-zinc-500 dark:text-zinc-400 font-normal text-sm md:text-base mb-16 leading-relaxed">
           Have an architectural concept, project specifications, or a product deployment model to evaluate? Send over a message.
@@ -56,11 +57,8 @@ function ContactPage() {
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 01 // Direct Address
               </div>
-              <div className="flex items-center justify-between  mt-2">
+              <div className="flex items-center justify-around mt-2">
 
-                <span>
-                  <FaMailBulk />
-                </span>
                 <a
                   href={`mailto:${emailAddress}`}
                   className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors break-all"
@@ -68,10 +66,10 @@ function ContactPage() {
                   {emailAddress}
                 </a>
 
-                <div className="flex items-center gap-2 relative">
+                <div className="flex items-center gap-2  relative">
                   <button
                     onClick={() => copy(emailAddress)}
-                    className="text-xs font-medium bg-zinc-100 hover:bg-amber-500 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 dark:hover:bg-amber-400 dark:hover:text-black hover:text-black px-2.5 py-1 rounded border border-zinc-300 dark:border-zinc-700 transition-colors duration-150"
+                    className="text-xs font-medium hover:cursor-pointer bg-zinc-100 hover:bg-amber-500 dark:bg-zinc-900 text-zinc-800 dark:text-zinc-200 dark:hover:bg-amber-400 dark:hover:text-black hover:text-black px-2.5 py-1 rounded border border-zinc-300 dark:border-zinc-700 transition-colors duration-150"
                   >
                     Copy
                   </button>
@@ -130,7 +128,6 @@ function ContactPage() {
               </a>
             </div>
           </div>
-
           {/* Right Column: Architectural Form Frame */}
           <BorderGlow
             glowIntensity={20}
@@ -175,10 +172,12 @@ function ContactPage() {
               </div>
 
               {/* Structural Submit Trigger */}
+
               <button
                 type="submit"
                 onClick={(e) => e.preventDefault()}
-                className="w-full bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase py-3 rounded border border-zinc-950 dark:border-zinc-100 hover:bg-transparent dark:hover:bg-transparent hover:text-zinc-950 dark:hover:text-zinc-100 transition-all duration-200 flex items-center justify-center gap-2"
+                className=" p-10 bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase pt-3 pb-7 hover:opacity-90 transition-all duration-200 flex items-center justify-center gap-2 text-center w-full hover:cursor-pointer"
+                style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 76% 100%, 50% 75%, 0% 75%)" }}
               >
                 Transmit Message
               </button>
