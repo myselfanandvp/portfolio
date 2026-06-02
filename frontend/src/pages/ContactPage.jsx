@@ -1,13 +1,42 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import BorderGlow from "../components/animations/GlowingBorder";
 import PageTransition from "../components/PageTransition";
 import { FaAddressCard, FaGithub, FaLinkedinIn, FaMailBulk } from 'react-icons/fa';
 import Clipshape from "../components/Clipshape";
+import { useForm, ValidationError } from "@formspree/react";
+
+
 function ContactPage() {
   const emailAddress = "mailanandvp@gmail.com";
   const [isCopied, setIsCopied] = useState(false);
   const darkMode = useSelector((state) => state.theme.darkMode);
+  const [state, handleSubmit] = useForm("xgoqgpaa")
+  const [showSuccess, setShowSuccess] = useState(false);
+  const [formData, setFormdata] = useState({ email: "", message: "" })
+
+  const updaateEmail = (email) => {
+    setFormdata(prev => ({
+      ...prev, email
+    }))
+  }
+
+  const updateMessage = (message) => {
+    setFormdata((prev) => ({
+      ...prev, message
+    }))
+  }
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setShowSuccess(true)
+      setFormdata({ email: "", message: "" })
+      const timer = setTimeout(() => {
+        setShowSuccess(false);
+      }, 4000)
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
 
   const copy = async (text) => {
     if (!window?.navigator?.clipboard) {
@@ -137,30 +166,32 @@ function ContactPage() {
             className="md:col-span-3 p-3 bg-white dark:bg-zinc-800 rounded-[14px]"
             backgroundColor={darkMode ? "black" : "white"}
           >
-            <form className="bg-white dark:bg-black p-6 md:p-8 space-y-6 rounded-[11px]">
-              {/* Name Block */}
-              <div className="group relative space-y-1.5">
-                <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-mono">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  placeholder="Identify your name or firm"
-                  className="w-full px-4 py-2.5 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 text-zinc-900 dark:text-zinc-100 text-sm placeholder-zinc-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-zinc-950 transition-all duration-150"
-                />
-              </div>
-
+            <form
+              onSubmit={handleSubmit}
+              className="bg-white dark:bg-black p-6 md:p-8 space-y-6 rounded-[11px]"
+            >
               {/* Email Block */}
               <div className="group relative space-y-1.5">
                 <label className="block text-xs font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500 font-mono">
                   Email
                 </label>
                 <input
+                  id="email"
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  required
                   placeholder="contact@domain.com"
                   className="w-full px-4 py-2.5 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 text-zinc-900 dark:text-zinc-100 text-sm placeholder-zinc-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-zinc-950 transition-all duration-150"
+                  onChange={(e) => { updaateEmail(e.target.value) }}
                 />
               </div>
+
+              <ValidationError
+                prefix="Email"
+                field="email"
+                errors={state.errors}
+              />
 
               {/* Message Block */}
               <div className="group relative space-y-1.5">
@@ -169,22 +200,41 @@ function ContactPage() {
                 </label>
                 <textarea
                   rows={4}
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={(e) => { updateMessage(e.target.value) }}
+                  required
                   placeholder="Outline your architectural parameters or requirements..."
                   className="w-full px-4 py-2.5 rounded border border-zinc-200 dark:border-zinc-800 bg-zinc-50/50 dark:bg-zinc-900/30 text-zinc-900 dark:text-zinc-100 text-sm placeholder-zinc-400 focus:outline-none focus:border-amber-500 dark:focus:border-amber-400 focus:bg-white dark:focus:bg-zinc-950 transition-all duration-150 resize-none"
                 />
               </div>
 
-              {/* Structural Submit Trigger */}
+              <ValidationError
+                prefix="Message"
+                field="message"
+                errors={state.errors}
+              />
 
               <button
                 type="submit"
-                onClick={(e) => e.preventDefault()}
-                className=" p-10 bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase pt-3 pb-7 hover:opacity-90 transition-all duration-200 flex items-center justify-center gap-2 text-center w-full hover:cursor-pointer"
-                style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 76% 100%, 50% 75%, 0% 75%)" }}
+                disabled={state.submitting}
+                className="p-10 bg-zinc-950 text-zinc-50 dark:bg-zinc-100 dark:text-zinc-950 font-medium text-xs tracking-wider uppercase pt-3 pb-7 hover:opacity-90 transition-all duration-200 flex items-center justify-center gap-2 text-center w-full hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+                style={{
+                  clipPath:
+                    "polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 76% 100%, 50% 75%, 0% 75%)",
+                }}
               >
-                Transmit Message
+                {state.submitting ? "Sending..." : "Transmit Message"}
               </button>
             </form>
+            {showSuccess &&
+              <div className="fixed bottom-0 right-0 left-0 mb-1 w-full">
+                <p className="text-center dark:text-gray-400 text-amber-500  w-full flex items-center justify-center">Thanks for contanting me</p>
+              </div>
+
+            }
+
           </BorderGlow>
 
         </div>

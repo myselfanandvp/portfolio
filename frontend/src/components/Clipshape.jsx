@@ -5,7 +5,7 @@ const Clipshape = () => {
   const color = darkMode ? "gray" : "amber"
   return (
     <div
-      className={`w-60 h-6 bg-${color}-500 mb-8 shadow--100`}
+      className={`w-60 h-8 bg-${color}-300 mb-8 `}
       style={{
         clipPath:
           "polygon(58% 44%, 100% 41%, 100% 57%, 72% 58%, 17% 60%, 99% 50%, 0% 49%)",
