@@ -57,14 +57,17 @@ function ContactPage() {
               <div className="text-[10px] font-bold text-zinc-400 dark:text-zinc-500 uppercase tracking-widest font-mono mb-1">
                 01 // Direct Address
               </div>
-              <div className="flex items-center justify-around mt-2">
+              <div className="flex items-center justify-between  gap-1 mt-2">
+                <div className="flex flex-col lg:flex-row lg:justify-between lg:gap-3">
 
-                <a
-                  href={`mailto:${emailAddress}`}
-                  className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors break-all"
-                >
-                  {emailAddress}
-                </a>
+                  <FaMailBulk />
+                  <a
+                    href={`mailto:${emailAddress}`}
+                    className="text-sm font-semibold text-zinc-800 text-wrap dark:text-zinc-200 hover:text-amber-500 dark:hover:text-amber-400 transition-colors break-all"
+                  >
+                    {emailAddress}
+                  </a>
+                </div>
 
                 <div className="flex items-center gap-2  relative">
                   <button
