@@ -12,7 +12,7 @@ function Footer() {
 
   return (
     <footer className="z-40 relative  w-full backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 bg-white/70 dark:bg-zinc-950/70 font-sans transition-colors duration-300">
-      <div className="max-w-6xl mx-auto px-6 py-12">
+      <div className="max-w-7xl mx-auto px-6 py-12">
 
         {/* Top Section: Architectural Directory Grid */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 pb-8 border-b border-zinc-100 dark:border-zinc-900">
