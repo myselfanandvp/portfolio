@@ -1,81 +1,61 @@
-import { Suspense, useEffect, useRef } from "react";
-import { Canvas, useThree } from "@react-three/fiber";
-import {
-  OrbitControls, useGLTF, Environment,
-  Html, useProgress, Center,
-} from "@react-three/drei";
+import { Center, Environment, OrbitControls, PerspectiveCamera, useGLTF, useProgress } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { Suspense } from "react";
 
-function Loader() {
-  const { progress } = useProgress();
-  return <Html center>{progress.toFixed(0)}% loaded</Html>;
-}
 
-// ✅ Fixed: JSX moved out of useEffect into the component's render return
-function Model({ url }) {
-  const { scene } = useGLTF(url);
+const Loading = () => {
+  const progress = useProgress()
   return (
-    <Center>
-      <primitive object={scene} scale={3} />
-    </Center>
+    <Html center>
+      <div className="flex flex-col items-center gap-3">
+        <div className="w-12 h-12 border-4 border-amber-500 border-t-transparent rounded-full animate-spin" />
+        <p className="text-white text-sm font-medium">
+          {progress.toFixed(0)}%
+        </p>
+      </div>
+    </Html>
   );
 }
 
-// ✅ Inner component that forces a resize after mount
-function ResizeHandler() {
-  const { gl, camera } = useThree();
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      const canvas = gl.domElement;
-      const parent = canvas.parentElement;
-      if (!parent) return;
-      const { width, height } = parent.getBoundingClientRect();
-      gl.setSize(width, height);
-      if (camera.isPerspectiveCamera) {
-        camera.aspect = width / height;
-        camera.updateProjectionMatrix();
-      }
-    }, 50);
-    return () => clearTimeout(timeout);
-  }, []);
-  return null;
-}
 
-export default function ModelViewer({ url, autoRotate = false }) {
-  const containerRef = useRef(null);
+const ModelViewer = ({ url }) => {
+  if (!url) return null;
+  const { scene } = useGLTF(url);
+
   return (
-    <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
+    <div className="w-full h-full flex justify-center items-center">
       <Canvas
-        shadows
-        camera={{ fov: 50, position: [0, 0, 4] }}
-        gl={{ alpha: true }}
-        style={{ width: "100%", height: "100%", display: "block" }}
-        resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}
+        resize={{ scroll: false, offsetSize: true }}
+        style={{ width: "100%", height: "100%" }}
       >
-        <ResizeHandler />
-        <ambientLight intensity={0.6} />
+        {/* Camera — makeDefault so OrbitControls attaches to it */}
+        <PerspectiveCamera makeDefault fov={45} position={[0, 1, 5]} />
+
+        {/* Lighting */}
+        <ambientLight intensity={0.8} />
         <directionalLight
-          position={[5, 8, 5]}
-          intensity={1.5}
-          castShadow
-          shadow-mapSize={[1024, 1024]}
+          position={[5, 40, 5]}
+          intensity={5}
         />
-        <Environment preset="forest" />
-        <Suspense key={url} fallback={<Loader />}>
-          <Model url={url} />
-        </Suspense>
+
+        {/* Model */}
+        <Center>
+          <Suspense fallback={<Loading />}>
+            <primitive object={scene} scale={3.7} />
+          </Suspense>
+        </Center>
+        <Environment preset="sunset" />
+        {/* Controls */}
         <OrbitControls
-          autoRotate={autoRotate}
-          autoRotateSpeed={1.5}
+          enableZoom={false}
           enablePan={false}
-          enableDamping
-          dampingFactor={0.08}
-          minDistance={3.7}
-          maxDistance={6}
-          target={[0, 0, 0]}
-          minPolarAngle={Math.PI / 6}
-          maxPolarAngle={Math.PI / 1.5}
+          autoRotate={true}
+          minPolarAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI / 2}
         />
       </Canvas>
     </div>
   );
-}
+};
+
+export default ModelViewer;

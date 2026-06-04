@@ -89,7 +89,6 @@ function LandingPage() {
             <div className="w-full max-w-105 lg:max-w-125 aspect-square bg-transparent overflow-hidden">
               <ModelViewer
                 url={`${import.meta.env.BASE_URL}models/mini_model.glb`}
-                autoRotate={true}
               />
             </div>
           </div>
