@@ -6,19 +6,17 @@ import ModelViewer from "../components/ModelViewer";
 function LandingPage() {
   return (
     <PageTransition>
-      {/* Fix #10 & #11: removed bg-transparent/dark:bg-zinc-950 and overflow-hidden from section
-          — background is handled by the global layout, not the section */}
-      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 max-w-7xl mx-auto font-sans text-zinc-900 dark:text-zinc-100 transition-colors duration-300">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 max-w-7xl mx-auto font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden">
 
-        {/* Ambient Top Glow — Fix #8: h-150 → h-[600px] */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.08),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.04),transparent_50%)] pointer-events-none -z-10" />
+        {/* Ambient Top Glow */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-150 bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.08),transparent_50%)] dark:bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.04),transparent_50%)] pointer-events-none -z-10" />
 
-        {/* Dot Grid — Fix #9: bg-size-[...] → bg-[length:24px_24px] */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[length:24px_24px] pointer-events-none -z-10" />
+        {/* Dot Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px)] dark:bg-[radial-gradient(rgba(255,255,255,0.015)_1px,transparent_1px)] bg-size-[24px_24px] pointer-events-none -z-10" />
 
         <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center mt-4 relative z-10">
 
-          {/* LEFT: INTRO */}
+          {/* LEFT: INTRO — 7 cols on desktop, full width on mobile */}
           <div className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
 
             {/* Status Badge */}
@@ -85,19 +83,17 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* RIGHT: 3D MODEL */}
-          {/* Fix #12: min-h so mobile layout doesn't collapse before model loads */}
+          {/* RIGHT: 3D MODEL — 5 cols on desktop, full width on mobile */}
           <div className="lg:col-span-5 w-full flex justify-center order-1 lg:order-2">
-            <div className="w-full max-w-[420px] lg:max-w-[500px] aspect-square min-h-[300px] bg-transparent overflow-hidden">
+            {/* Model viewer wrapper with fluid sizing */}
+            <div className="w-full max-w-[420px] lg:max-w-[500px] aspect-square bg-transparent overflow-hidden">
               <ModelViewer
                 url={`${import.meta.env.BASE_URL}models/mini_model.glb`}
                 autoRotate={true}
               />
             </div>
           </div>
-          <div>
-            <h1>Hello world</h1>
-          </div>
+
         </div>
       </section>
     </PageTransition>
