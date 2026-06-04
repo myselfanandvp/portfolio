@@ -95,7 +95,9 @@ function LandingPage() {
               />
             </div>
           </div>
-
+          <div>
+            <h1>Hello world</h1>
+          </div>
         </div>
       </section>
     </PageTransition>
