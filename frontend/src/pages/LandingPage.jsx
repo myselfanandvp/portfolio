@@ -32,7 +32,7 @@ function LandingPage() {
             {/* Heading */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight leading-[1.05] text-zinc-900 dark:text-white">
               Anand V P <br />
-              <span className="font-light text-3xl sm:text-4xl md:text-5xl block mt-2 bg-gradient-to-r from-amber-600 via-amber-500 to-orange-600 dark:from-amber-200 dark:via-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
+              <span className="font-light text-3xl sm:text-4xl md:text-5xl block mt-2 bg-linear-to-r from-amber-600 via-amber-500 to-orange-600 dark:from-amber-200 dark:via-yellow-400 dark:to-orange-500 bg-clip-text text-transparent">
                 Full-Stack Architecture.
               </span>
             </h1>
@@ -44,7 +44,7 @@ function LandingPage() {
 
             {/* Stack Nodes */}
             <div className="mt-8 w-full max-w-md text-left">
-              <div className="relative space-y-5 before:absolute before:left-[18px] before:top-2 before:bottom-2 before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
+              <div className="relative space-y-5 before:absolute before:left-4.5 before:top-2 before:bottom-2 before:w-px before:bg-zinc-200 dark:before:bg-zinc-800">
                 {[
                   { label: 'UI', color: 'text-amber-600 dark:text-amber-400', title: 'Client Presentation Layer', sub: 'React.js · Tailwind CSS · State Orchestration' },
                   { label: 'API', color: 'text-orange-600 dark:text-orange-400', title: 'Asynchronous Core Engine', sub: 'Python · FastAPI / Django · Secure REST Endpoints' },
@@ -86,7 +86,7 @@ function LandingPage() {
           {/* RIGHT: 3D MODEL — 5 cols on desktop, full width on mobile */}
           <div className="lg:col-span-5 w-full flex justify-center order-1 lg:order-2">
             {/* Model viewer wrapper with fluid sizing */}
-            <div className="w-full max-w-[420px] lg:max-w-[500px] aspect-square bg-transparent overflow-hidden">
+            <div className="w-full max-w-105 lg:max-w-125 aspect-square bg-transparent overflow-hidden">
               <ModelViewer
                 url={`${import.meta.env.BASE_URL}models/mini_model.glb`}
                 autoRotate={true}
