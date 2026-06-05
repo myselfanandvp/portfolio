@@ -1,9 +1,10 @@
 import PageTransition from "../components/PageTransition";
 import { Link } from "react-router-dom";
 import { FaAngleDoubleRight } from 'react-icons/fa';
-import ModelViewer from "../components/ModelViewer";
+import ModelViewer from "../components/ModelViewer"
 
 function LandingPage() {
+
   return (
     <PageTransition>
       <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-16 max-w-7xl mx-auto font-sans bg-transparent dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 transition-colors duration-300 overflow-hidden">

@@ -3,6 +3,7 @@ import BorderGlow from "../components/animations/GlowingBorder";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Clipshape from "../components/Clipshape";
+
 function AboutPage() {
   const darkMode = useSelector(state => state.theme.darkMode)
   return (

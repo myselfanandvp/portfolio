@@ -93,7 +93,6 @@ function ProjectsPage() {
         </p>
 
         {/* Unified Geometry Grid */}
-
         <ChromaGrid items={items} />
 
       </section>
