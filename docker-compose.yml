@@ -1,0 +1,12 @@
+services:
+  frontend:
+    image: frontend-portfolio:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "9000:5173"
+    volumes:
+      - ./frontend:/app/frontend
+    # command: bun run dev --host

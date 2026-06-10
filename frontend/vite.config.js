@@ -8,4 +8,8 @@ export default defineConfig({
   // base: '/portfolio/',
   base: process.env.VITE_BASE_PATH || '/',
   assetsInclude: ["**/*.glb"],
+  server: {
+    host: "0.0.0.0",
+    port: 5173
+  },
 })

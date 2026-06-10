@@ -9,7 +9,7 @@ function AboutPage() {
   return (
     <PageTransition>
       {/* Structural Main Layout - Corrected to pt-16 for navbar offset alignment and top-start alignment */}
-      <section className="relative z-10 flex flex-col items-center justify-start min-h-[calc(100vh-4rem)] px-4 sm:px-6 md:px-8 pt-16 pb-12 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 py-24 max-w-7xl mx-auto w-full font-sans selection:bg-amber-500/20">
 
         {/* Minimal Context Indicator */}
         <div className="mb-2 mt-5 flex items-center gap-2">
