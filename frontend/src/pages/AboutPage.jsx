@@ -47,7 +47,7 @@ function AboutPage() {
             <BorderGlow
               glowIntensity={15}
               glowRadius={30}
-              className="lg:col-span-5 flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-950/10 w-full rounded-xl p-3"
+              className="lg:col-span-5 flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-950/10 w-full rounded-xl p-3 transition-all duration-300"
               backgroundColor={darkMode ? "black" : "white"}
             >
               <div className="flex flex-col flex-1 w-full p-6 md:p-8 rounded-xl border border-zinc-200/60 dark:border-zinc-800/50 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300 justify-between gap-8">
@@ -150,7 +150,7 @@ function AboutPage() {
             </div>
 
             {/* Academic & Certification Foundations */}
-            <div className="md:col-span-5 p-5 md:p-6 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 rounded-xl flex flex-col justify-between">
+            <div className="md:col-span-5 p-5 md:p-6 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md border border-zinc-200/60 dark:border-zinc-800/60 rounded-xl flex flex-col justify-between transition-all duration-300">
               <h4 className="text-[10px] font-bold text-zinc-900 dark:text-zinc-300 mb-3 uppercase tracking-widest font-mono">
                 Foundations & Evolution
               </h4>
@@ -159,11 +159,11 @@ function AboutPage() {
                   <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">Full Stack Specialization (React + Django)</div>
                   <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Brototype — Intensive Residency</div>
                 </div>
-                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5">
+                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5 transition-all duration-300">
                   <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">Web Application Architecture Studies</div>
                   <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Keltron Centre — .NET & PHP Stack</div>
                 </div>
-                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5">
+                <div className="border-t border-zinc-100 dark:border-zinc-900/60 pt-2.5 transition-all duration-300">
                   <div className="font-semibold text-zinc-800 dark:text-zinc-200 text-[11px] sm:text-xs">B.Sc. Physics</div>
                   <div className="text-zinc-400 dark:text-zinc-500 text-[10px] font-mono">Mahatma Gandhi University</div>
                 </div>

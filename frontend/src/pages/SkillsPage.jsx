@@ -52,14 +52,14 @@ function SkillsPage() {
             <BorderGlow
               key={idx}
               glowIntensity={20}
-              className="flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-2xl p-2"
+              className="flex flex-col h-full bg-zinc-100/50 dark:bg-zinc-900/10 w-full rounded-2xl p-2 transition-all duration-300"
               backgroundColor={darkMode ? "black" : "white"}
             >
               {/* Structural Content Container Block */}
               <div className="flex flex-col flex-1 w-full p-6 rounded-2xl border border-zinc-200/60 dark:border-zinc-800/60 bg-white/50 dark:bg-zinc-950/40 backdrop-blur-md transition-all duration-300">
 
                 {/* Module Heading Group */}
-                <div className="flex flex-col gap-1 mb-6 pb-4 border-b border-zinc-100 dark:border-zinc-900">
+                <div className="flex flex-col gap-1 mb-6 pb-4 border-b border-zinc-300 dark:border-zinc-700 transition-all duration-300">
                   <span className="font-mono text-[10px] uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
                     {category.index}
                   </span>

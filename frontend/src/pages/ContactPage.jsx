@@ -238,8 +238,6 @@ function ContactPage() {
           </BorderGlow>
 
         </div>
-
-
       </section>
     </PageTransition>
   );
