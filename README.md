@@ -1,4 +1,4 @@
-# Anand V P: Full-Stack Portfolio 🚀
+# Anand V P: My Portfolio 🚀
 
 This repository showcases a dynamic and visually engaging portfolio website built with modern web technologies. It features a responsive design, interactive elements, and a clear presentation of projects, skills, and professional background.
 
@@ -7,14 +7,13 @@ This repository showcases a dynamic and visually engaging portfolio website buil
 ![JavaScript](https://img.shields.io/badge/javascript-%23FFDE57.svg?style=for-the-badge&logo=javascript&logoColor=000)
 ![React](https://img.shields.io/badge/react-%2361DAFB.svg?style=for-the-badge&logo=react&logoColor=000)
 ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338BDF8.svg?style=for-the-badge&logo=tailwindcss&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-%2343853D.svg?style=for-the-badge&logo=node-js&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 ![Formspree](https://img.shields.io/badge/Formspree-gray.svg?style=for-the-badge&logo=formspree&logoColor=white)
 
 ## 📄 Description
 
-This portfolio website serves as a comprehensive digital presence for Anand V P, a Full Stack Developer. It is meticulously crafted using React and Vite, leveraging Tailwind CSS for a sleek and responsive user interface. The site highlights key projects with interactive elements, detailed skill sets, and a clear contact form facilitated by Formspree. The frontend logic is managed efficiently, with a focus on creating a smooth user experience and showcasing a strong command of modern web development practices.
+This portfolio website serves as a comprehensive digital presence for Anand V P, a Full Stack Developer. It is meticulously crafted using React and Vite, leveraging Tailwind CSS for a sleek and responsive user interface. The site highlights key projects with interactive elements, detailed skill sets, and a clear contact form facilitated by Formspree. Being a purely client-side application, it focuses on creating a smooth, fast, and visually engaging user experience.
 
 The website is structured into distinct sections: a landing page with a 3D model visualization, an about page detailing professional experience and technical skills, a projects page showcasing past work, a skills page enumerating core competencies, and a contact page for easy communication.
 
@@ -106,6 +105,8 @@ This portfolio website is designed to showcase the developer's skills, projects,
 ## 📁 Project Structure
 
 The project follows a standard React application structure:
+
+
 ```
 portfolio/
 ├── .dockerignore
@@ -113,22 +114,23 @@ portfolio/
 ├── docker-compose.yml
 ├── README.md
 └── frontend/
-    ├── public/
-    ├── src/
-    │   ├── assets/
-    │   ├── components/
-    │   │   └── animations/
-    │   ├── pages/
-    │   ├── store/
-    │   ├── App.jsx
-    │   ├── main.jsx
-    │   └── index.css
-    ├── index.html
-    ├── .eslintrc.js
-    ├── .gitignore
-    ├── package.json
-    └── vite.config.js
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   └── animations/
+│   ├── pages/
+│   ├── store/
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── index.html
+├── .eslintrc.js
+├── .gitignore
+├── package.json
+└── vite.config.js
 ```
+
 - **`frontend/src/components`**: Contains reusable UI components and reusable logic modules.
 - **`frontend/src/pages`**: Houses the main components for each route/page.
 - **`frontend/src/store`**: Manages application state using Redux Toolkit.
