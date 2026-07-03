@@ -12,8 +12,8 @@ function ProjectsPage() {
   const items = [
     {
       image: Wavelift,
-      title: "WaveLift Legal Claims Platform",
-      subtitle: "Full-stack enterprise legal & insurance workflow system built with Django",
+      title: "WaveLift",
+      subtitle: "Full-Stack Personal Headset eCommerce Platform Built with Django"
       handle: "01 // Enterprise System",
       borderColor: "border-zinc-300 dark:border-zinc-800",
       accentColor: "group-hover:text-amber-500",
