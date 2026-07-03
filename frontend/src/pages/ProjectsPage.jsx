@@ -13,7 +13,7 @@ function ProjectsPage() {
     {
       image: Wavelift,
       title: "WaveLift",
-      subtitle: "Full-Stack Personal Headset eCommerce Platform Built with Django"
+      subtitle: "Full-Stack Personal Headset eCommerce Platform Built with Django",
       handle: "01 // Enterprise System",
       borderColor: "border-zinc-300 dark:border-zinc-800",
       accentColor: "group-hover:text-amber-500",
